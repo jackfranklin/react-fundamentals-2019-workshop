@@ -1,0 +1,33 @@
+* {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+body > h1 {
+  border-bottom: 1px solid #111;
+  margin-bottom: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+.search-form input {
+  margin: 10px;
+}
+
+header {
+  background: #111;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+}
+
+header button {
+  margin-left: auto;
+}
+
+.post {
+  border-bottom: 1px solid #111;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
