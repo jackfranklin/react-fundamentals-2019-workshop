@@ -9,7 +9,7 @@ Then run `npm install`. Each exercise is run individually, so to run an exercise
 ## JS Overview
 
 ```
-npm run exercise overview 2
+npm run exercise js-overview 2
 ```
 
 ## React Fundamentals / Advanced React
