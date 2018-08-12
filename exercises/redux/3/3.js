@@ -10,10 +10,7 @@ import Counter from './counter'
 
 render(
   <Provider store={store}>
-    <p>
-      TODO: do the exercises in <code>counter.js</code> and then render it onto
-      the page
-    </p>
+    <Counter />
   </Provider>,
   document.getElementById('react-root')
 )

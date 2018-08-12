@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { increment } from './actions'
 import { connect } from 'react-redux'
 
 class Counter extends Component {
@@ -8,12 +9,20 @@ class Counter extends Component {
     count: PropTypes.number.isRequired,
   }
 
+  state = {
+    inputCount: 0,
+  }
+
+  onInputCountChange = e => {
+    this.setState({ inputCount: Number(e.target.value) })
+  }
+
   decrement = () => {
     this.props.dispatch({ type: 'DECREMENT' })
   }
 
   increment = () => {
-    this.props.dispatch({ type: 'INCREMENT' })
+    this.props.dispatch(increment())
   }
 
   render() {
@@ -23,6 +32,12 @@ class Counter extends Component {
         <br />
         <button onClick={this.decrement}>-</button>
         <button onClick={this.increment}>+</button>
+        <br />
+        <input
+          type="number"
+          value={this.state.inputCount}
+          onChange={this.onInputCountChange}
+        />
       </div>
     )
   }
