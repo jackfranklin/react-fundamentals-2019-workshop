@@ -5,29 +5,25 @@ import ReactDOM from 'react-dom'
 import expect from 'expect'
 
 const classExercises = () => {
-  // TODO: get this test passing
+  // TODO: keep this test passing
+  // using the proposal-class-fields features
 
-  class Person1 {
-    constructor() {
-      this.name = 'bob'
-    }
-  }
+  class Person1 {}
+  Person1.foo = 'bar'
 
-  expect(new Person1('jack').name).toEqual('jack')
+  expect(Person1.foo).toEqual('bar')
 
-  // TODO: and then get this one passing!
+  // TODO: and then get this one passing using instance fields
 
   class Person2 {
     constructor(name) {
       this.name = name
+      this.foo = 'bar'
     }
-
-    setName(newName) {}
   }
 
   const person2 = new Person2('jack')
-  person2.setName('jack')
-  expect(person2.name).toEqual('bob')
+  expect(person2.foo).toEqual('bar')
 }
 
 const App = () => <p>Look in the console!</p>
