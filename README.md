@@ -15,7 +15,7 @@ npm run exercise overview 2
 ## React Fundamentals / Advanced React
 
 ```
-npm run exercise react-fun 9
+npm run exercise react 9
 ```
 
 ## Apps with React Router
@@ -35,12 +35,11 @@ npm run exercise redux 1
 ## React Fundamentals / Advanced React
 
 ```
-npm run exercise react-fun 9
+npm run exercise react 9
 ```
 
 ## Async JS: promises, async/await and Ajax requests
 
 ```
 npm run exercise async 1
-
 ```

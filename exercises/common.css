@@ -11,6 +11,10 @@ body > h1 {
   padding: 10px;
 }
 
+code {
+  font-family: 'Courier New', Courier, monospace;
+}
+
 .search-form input {
   margin: 10px;
 }
