@@ -27,12 +27,13 @@ const generateIndexFile = (folderName, exerciseNumber) => {
     'index.html'
   )
 
-  if (fs.existsSync(filePath)) return
+  if (fs.existsSync(filePath)) return filePath
 
   const contents = createHtml(folderName, exerciseNumber)
 
   console.log('Generating index.html file for exercise')
   fs.writeFileSync(filePath, contents, { encoding: 'utf8' })
+  return filePath
 }
 
 const folderName = argv._[0]
@@ -56,12 +57,10 @@ if (!pathExists) {
   process.exit(1)
 }
 
-generateIndexFile(folderName, exercisePath)
+const indexFile = generateIndexFile(folderName, exerciseNumber)
 
-const file = path.join(process.cwd(), exercisePath)
+console.log('Exercise running:', chalk.blue(indexFile))
 
-console.log('Running on', chalk.blue(exercisePath))
-
-const bundler = new Bundler(file)
+const bundler = new Bundler(indexFile)
 
 bundler.serve(1234)
