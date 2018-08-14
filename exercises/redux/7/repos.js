@@ -9,12 +9,14 @@ class Repos extends Component {
     repos: PropTypes.arrayOf(PropTypes.object).isRequired,
   }
 
-  // TODO: can you make this component let the user enter their username and use that
-  // to fetch the repositories? Remember that you'll want to dispatch...
+  onFetchClick = () => {
+    this.props.dispatch(fetchRepositories())
+  }
+
   render() {
     return (
       <div className="counter">
-        <button>Fetch Repos</button>
+        <button onClick={this.onFetchClick}>Fetch Repos</button>
         {this.props.repos.map(repo => {
           return <div key={repo.id}>{repo.name}</div>
         })}

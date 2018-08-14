@@ -10,7 +10,7 @@
   },
   "private": true,
   "scripts": {
-    "exercise": "node bin/run-exercise.js",
+    "exercise": "NODE_ENV='development' node bin/run-exercise.js",
     "prettier:write": "prettier --write 'exercises/**/*.js'"
   },
   "dependencies": {
