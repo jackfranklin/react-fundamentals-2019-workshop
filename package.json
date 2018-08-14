@@ -4,6 +4,10 @@
   "main": "index.js",
   "author": "Jack Franklin",
   "license": "MIT",
+  "engines": {
+    "node": "8",
+    "npm": "5",
+  },
   "private": true,
   "scripts": {
     "exercise": "node bin/run-exercise.js",
