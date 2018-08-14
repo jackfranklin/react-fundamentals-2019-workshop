@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "exercise": "node bin/run-exercise.js"
+    "exercise": "node bin/run-exercise.js",
+    "prettier:write": "prettier --write 'exercises/**/*.js'"
   },
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",

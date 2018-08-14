@@ -23,7 +23,9 @@ export default class Posts extends Component {
   render() {
     return (
       <ul>
-        {this.state.posts.map(post => <Post post={post} key={post.id} />)}
+        {this.state.posts.map(post => (
+          <Post post={post} key={post.id} />
+        ))}
       </ul>
     )
   }
