@@ -1,4 +1,4 @@
-import '../../common.css'
+
 
 import React, { Fragment } from 'react'
 import { render } from 'react-dom'

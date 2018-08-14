@@ -1,5 +1,3 @@
-import '../../common.css'
-
 const container = document.getElementById('react-root')
 
 const logPromiseValue = (index, value) => {
