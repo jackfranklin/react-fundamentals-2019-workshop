@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { BrowserRouter, Route, NavLink } from 'react-router-dom'
+import { BrowserRouter, Route, Link, NavLink } from 'react-router-dom'
 
 const About = () => {
   return <p> this is the about page</p>
