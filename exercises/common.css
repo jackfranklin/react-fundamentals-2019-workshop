@@ -35,3 +35,8 @@ header button {
   margin-bottom: 10px;
   padding-bottom: 10px;
 }
+
+.active-link {
+  color: red;
+  font-weight: bold;
+}
