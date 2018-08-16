@@ -20,18 +20,19 @@ const destructuringExercises = () => {
     const name = jack.name
     // TODO: don't have this hard coded
     const rest = { team: 'newcastle' }
+
     expect(name).toEqual('jack')
     expect(rest).toEqual({ team: 'newcastle' })
   })()
   ;(function testThree() {
-    const name = jack.name
-    const colour = jack.colour || 'blue'
+    const { name, colour: newColour = 'blue' } = jack
     expect(name).toEqual('jack')
-    expect(colour).toEqual('blue')
+    expect(newColour).toEqual('blue')
   })()
   ;(function testFour() {
     const p1 = people[0]
     const p2 = people[1]
+
     expect(p1).toEqual('alice')
     expect(p2).toEqual('bob')
   })()

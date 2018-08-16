@@ -6,27 +6,36 @@ import fetch from 'so-fetch-js'
 class Post extends Component {
   state = {
     post: null,
+    loading: false,
+    error: false,
     userPostInput: '',
   }
 
   userInputChange = e => {
-    console.log('got user input value', e.target.value)
-    // TODO: update the userPostInput state with the new value when the user types
+    this.setState({ userPostInput: e.target.value })
   }
 
   onSubmit = e => {
     e.preventDefault()
-    console.log('got form submit!')
-    // TODO: call this.fetchPost(), passing in the right ID
+    this.fetchPost(this.state.userPostInput)
   }
 
   fetchPost(id) {
     // TODO: make the urlForPost take into account the ID variable
-    const urlForPost = `https://jsonplaceholder.typicode.com/posts/1`
+    const urlForPost = `https://jsonplaceholder.typicode.com/posts/${id}`
 
-    fetch(urlForPost).then(response => {
-      this.setState({ post: response.data })
-    })
+    this.setState({ loading: true })
+
+    fetch(urlForPost)
+      .then(response => {
+        this.setState({ post: response.data, error: false })
+      })
+      .catch(() => {
+        this.setState({ error: true, post: null })
+      })
+      .finally(() => {
+        this.setState({ loading: false })
+      })
   }
 
   render() {
@@ -51,8 +60,12 @@ class Post extends Component {
               <h1>{this.state.post.title}</h1>
               <p>{this.state.post.body}</p>
             </div>
-          ) : (
+          ) : this.state.loading ? (
             <p>Loading...</p>
+          ) : this.state.error ? (
+            <p>ERROR!!!</p>
+          ) : (
+            <p>Do something!</p>
           )}
         </div>
       </div>

@@ -4,6 +4,11 @@ import PropTypes from 'prop-types'
 
 // TODO: add propTypes to the Count component
 class Count extends Component {
+  static propTypes = {
+    onIncrement: PropTypes.func.isRequired,
+    count: PropTypes.number.isRequired,
+  }
+
   onButtonClick() {
     this.props.onIncrement()
   }
@@ -50,14 +55,15 @@ class Counter extends Component {
           count={this.state.count1}
           onIncrement={this.incrementCount1.bind(this)}
         />
+        <Count
+          count={this.state.count2}
+          onIncrement={this.incrementCount2.bind(this)}
+        />
       </div>
     )
   }
 }
 
-// TODO: make the counter component take a prop that configures the starting value
-// so I could do <Counter start={4} /> to start the counter at 4
-// remember to document it with prop types!
 const App = () => {
   return <Counter />
 }

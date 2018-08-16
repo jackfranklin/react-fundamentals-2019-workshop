@@ -19,20 +19,18 @@ class Post extends Component {
 
     fetch(urlForPost).then(response => {
       const post = response.data
-      // TODO: put this post into the state
-      console.log('I got the post!', post)
+      this.setState({ post })
     })
   }
 
   render() {
-    // TODO: return something other than "null" when we don't have a post
-    if (!this.state.post) return null
-
-    return (
+    return this.state.post ? (
       <div>
         <h1>{this.state.post.title}</h1>
         <p>{this.state.post.body}</p>
       </div>
+    ) : (
+      <p>Loading!</p>
     )
   }
 }

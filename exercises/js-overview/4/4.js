@@ -8,8 +8,11 @@ const objectSpreadExercises = () => {
 
   const person = { name: 'jack' }
   const team = { team: 'newcastle' }
-
-  const newPerson = Object.assign(person, team)
+  // person { name: '', team: ''}
+  const newPerson = {
+    ...person,
+    ...team,
+  }
 
   expect(newPerson).toEqual({ name: 'jack', team: 'newcastle' })
 }

@@ -17,8 +17,7 @@ export default class UserInput extends Component {
 
   onSubmit = e => {
     e.preventDefault()
-    // todo: call this.props.onSearchInputChange with the right ID
-    // so the parent knows that we have a new ID
+    this.props.onSearchInputChange(parseInt(this.state.userPostInput, 10))
   }
 
   render() {

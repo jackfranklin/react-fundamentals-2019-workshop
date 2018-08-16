@@ -28,7 +28,9 @@ class Counter extends Component {
     // shows the next value up from the current count
     return (
       <div>
+        <Count count={this.state.count - 1} />
         <Count count={this.state.count} />
+        <Count count={this.state.count + 1} />
         <button onClick={this.onButtonClickIncrement.bind(this)}>
           Click to increment
         </button>
@@ -37,9 +39,6 @@ class Counter extends Component {
   }
 }
 
-// TODO: make the counter component take a prop that configures the starting value
-// so I could do <Counter start={4} /> to start the counter at 4
-// remember to document it with prop types!
 const App = () => {
   return <Counter />
 }

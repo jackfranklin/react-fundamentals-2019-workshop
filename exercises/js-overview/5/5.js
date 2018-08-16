@@ -6,7 +6,7 @@ const promiseExercises = () => {
   // TODO: get this test passing
   Promise.resolve('foo')
     .then(data => {
-      expect(data).toEqual('foo')
+      return data + 'bar'
     })
     .then(data => {
       console.log('got data', data)
@@ -18,4 +18,5 @@ const App = () => <p>Look in the console!</p>
 
 ReactDOM.render(<App />, document.getElementById('react-root'))
 
-promiseExercises()
+const result = promiseExercises()
+console.log('result', result)

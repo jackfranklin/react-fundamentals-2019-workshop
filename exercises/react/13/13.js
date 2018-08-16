@@ -10,14 +10,16 @@ class Post extends Component {
   }
 
   userInputChange = e => {
-    console.log('got user input value', e.target.value)
-    // TODO: update the userPostInput state with the new value when the user types
+    this.setState({
+      userPostInput: e.target.value,
+    })
   }
 
   onSubmit = e => {
     e.preventDefault()
-    console.log('got form submit!')
-    // TODO: update the searchID state with the latest user post ID when the form is submitted
+    this.setState(prevState => {
+      return { searchId: prevState.userPostInput }
+    })
   }
 
   render() {

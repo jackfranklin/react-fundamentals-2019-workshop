@@ -45,7 +45,16 @@ class Counter extends Component {
     // rather than hardcoding them
     return (
       <div>
-        <Count
+        {this.state.counts.map((count, index) => {
+          return (
+            <Count
+              key="foo"
+              count={count}
+              onIncrement={this.incrementCount.bind(this, index)}
+            />
+          )
+        })}
+        {/* <Count
           count={this.state.counts[0]}
           onIncrement={this.incrementCount.bind(this, 0)}
         />
@@ -53,7 +62,7 @@ class Counter extends Component {
         <Count
           count={this.state.counts[1]}
           onIncrement={this.incrementCount.bind(this, 1)}
-        />
+        /> */}
       </div>
     )
     // TODO: once you do the above TODO, you'll see a warning in your console

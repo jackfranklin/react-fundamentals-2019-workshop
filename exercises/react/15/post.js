@@ -20,6 +20,7 @@ export default class Post extends Component {
     // remember to check if the ID prop has changed, so we don't
     // make network calls that are pointless
     if (prevProps.id !== this.props.id) {
+      this.fetchPost()
     }
   }
 

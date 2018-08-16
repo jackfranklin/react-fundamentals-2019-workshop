@@ -6,8 +6,11 @@ const classExercises = () => {
   // TODO: keep this test passing
   // using the proposal-class-fields features
 
-  class Person1 {}
-  Person1.foo = 'bar'
+  class Person1 {
+    static foo = 'bar'
+  }
+
+  // Person1.foo = 'bar'
 
   expect(Person1.foo).toEqual('bar')
 

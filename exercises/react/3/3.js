@@ -1,10 +1,16 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-const HelloWorld = props => {
-  // TODO: pass through another prop to customise the greeting
-  // rather than it always be hardcoded as Hello
-  return <h1>Hello, {props.name}</h1>
+const HelloWorld = ({ greeting = 'Hello', name }) => {
+  return (
+    <h1>
+      {greeting}, {name} sdlfkjsdlkfjsdlkfjdf
+      <div>
+        lkdjflkjsd
+        <span>sdlkjflskdjflsdjf</span>
+      </div>
+    </h1>
+  )
 }
 
 ReactDOM.render(

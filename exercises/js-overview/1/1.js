@@ -26,14 +26,15 @@ const arrowFunctionExercises = () => {
   const data = {
     person: 'jack',
     friends: ['alice', 'bob'],
+
     log() {
-      this.friends.forEach(function(name) {
+      this.friends.forEach(name => {
         console.log(this.person, 'has friend', name)
       })
     },
   }
 
-  // data.log()
+  data.log()
 }
 
 const App = () => <p>Look in the console!</p>

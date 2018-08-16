@@ -20,11 +20,13 @@ const classExercises = () => {
       this.name = name
     }
 
-    setName(newName) {}
+    setName(newName) {
+      this.name = newName
+    }
   }
 
   const person2 = new Person2('jack')
-  person2.setName('jack')
+  person2.setName('bob')
   expect(person2.name).toEqual('bob')
 }
 

@@ -26,6 +26,13 @@ npm run exercise async 1
 
 # Day Two
 
+Order of priorities:
+
+- React Router
+- Redux
+
+- Advanced React / Async JS stuff
+
 ## React Fundamentals / Advanced React
 
 ```
