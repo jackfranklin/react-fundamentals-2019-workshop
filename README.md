@@ -4,8 +4,6 @@ To get started, clone this repository.
 
 Then run `npm install`. Each exercise is run individually, so to run an exercise run the name of the section and the number:
 
-# Day One
-
 ## JS Overview
 
 ```
@@ -24,25 +22,16 @@ npm run exercise react 9
 npm run exercise async 1
 ```
 
-# Day Two
-
-Order of priorities:
-
-- React Router
-- Redux
-
-- Advanced React / Async JS stuff
-
 ## React Fundamentals / Advanced React
 
 ```
 npm run exercise react 9
 ```
 
-## Apps with React Router
+## React Router
 
 ```
-npm run exercise react-apps 9
+npm run exercise routing 1
 ```
 
 ## Redux
@@ -50,3 +39,15 @@ npm run exercise react-apps 9
 ```
 npm run exercise redux 1
 ```
+
+## Recommended watching:
+
+- The JavaScript event loop: https://www.youtube.com/watch?v=8aGhZQkoFbQ
+
+- Introduction to GraphQL: https://www.youtube.com/watch?v=lAJWHHUz8_8
+
+- https://egghead.io/courses/getting-started-with-redux
+
+- https://github.com/facebook/create-react-app
+
+- https://www.netlify.com/
