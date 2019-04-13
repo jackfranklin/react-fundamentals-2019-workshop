@@ -1,73 +1,41 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 
-class Count extends Component {
-  onButtonClick() {
-    this.props.onIncrement()
+const Count = props => {
+  const onButtonClick = () => {
+    props.onIncrement()
   }
 
-  render() {
-    return (
-      <div>
-        <p>Count: {this.props.count}</p>
-        <button onClick={this.onButtonClick.bind(this)}>Increment</button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <p>Count: {props.count}</p>
+      <button onClick={onButtonClick}>Increment</button>
+    </div>
+  )
 }
 
-Count.propTypes = {
-  onIncrement: PropTypes.func.isRequired,
-  count: PropTypes.number.isRequired,
-}
+const Counter = props => {
+  const [counts, setCounts] = useState([0, 0, 0])
 
-class Counter extends Component {
-  constructor(props) {
-    super(props)
-
-    this.state = {
-      counts: [0, 0, 0],
-    }
-  }
-
-  incrementCount(countIndex) {
-    this.setState(prevState => {
-      const counts = [...prevState.counts]
-      counts[countIndex] = prevState.counts[countIndex] + 1
-
-      return { counts: counts }
+  const incrementCount = index => {
+    setCounts(oldCounts => {
+      const newCounts = [...oldCounts]
+      newCounts[index] = newCounts[index] + 1
+      return newCounts
     })
   }
 
-  render() {
-    // TODO: generate the list of count components automatically
-    // rather than hardcoding them
-    return (
-      <div>
-        {this.state.counts.map((count, index) => {
-          return (
-            <Count
-              key="foo"
-              count={count}
-              onIncrement={this.incrementCount.bind(this, index)}
-            />
-          )
-        })}
-        {/* <Count
-          count={this.state.counts[0]}
-          onIncrement={this.incrementCount.bind(this, 0)}
-        />
-
-        <Count
-          count={this.state.counts[1]}
-          onIncrement={this.incrementCount.bind(this, 1)}
-        /> */}
-      </div>
-    )
-    // TODO: once you do the above TODO, you'll see a warning in your console
-    // where React tells you you're missing a key property. See if you can investigate...
-  }
+  // TODO: generate the list of count components automatically
+  // rather than hardcoding them
+  // TODO: once you do the above TODO, you'll see a warning in your console
+  // where React tells you you're missing a key property. See if you can investigate...
+  return (
+    <div>
+      <Count count={counts[0]} onIncrement={() => incrementCount(0)} />
+      <Count count={counts[1]} onIncrement={() => incrementCount(1)} />
+    </div>
+  )
 }
 
 const App = () => {
