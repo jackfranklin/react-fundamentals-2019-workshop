@@ -31,7 +31,11 @@ const generateIndexFile = (folderName, exerciseNumber) => {
 
   const contents = createHtml(folderName, exerciseNumber)
 
-  console.log('Generating index.html file for exercise')
+  console.log(
+    'Generating index.html file for exercise',
+    folderName,
+    exerciseNumber
+  )
   fs.writeFileSync(filePath, contents, { encoding: 'utf8' })
   return filePath
 }

@@ -1,0 +1,75 @@
+Arguments: 
+  /Users/jackfranklin/.nvm/versions/node/v10.15.3/bin/node /usr/local/Cellar/yarn/1.13.0/libexec/bin/yarn.js add @babel/preset-env @babel/preset-react @babel/plugin-transform-runtime @babel/plugin-proposal-transform-class-properties
+
+PATH: 
+  /Users/jackfranklin/.bin:/Users/jackfranklin/.nvm/versions/node/v10.15.3/bin:/usr/local/heroku/bin:./.bundle/binstubs:/Users/jackfranklin/.rbenv/shims:/Users/jackfranklin/.rbenv/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jackfranklin/.antigen/bundles/Tarrasch/zsh-autoenv:/Users/jackfranklin/.antigen/bundles/zsh-users/zsh-syntax-highlighting:/Users/jackfranklin/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/z:/Users/jackfranklin/.antigen/bundles/zsh-users/zsh-autosuggestions:/Users/jackfranklin/.fzf/bin:/Users/jackfranklin/.rbenv/bin:/Applications/Postgres.app/Contents/Versions/latest/bin
+
+Yarn version: 
+  1.13.0
+
+Node version: 
+  10.15.3
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: http://registry.npmjs.org/@babel%2fplugin-proposal-transform-class-properties: Not found
+      at Request.params.callback [as _callback] (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:66255:18)
+      at Request.self.callback (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:129397:22)
+      at Request.emit (events.js:189:13)
+      at Request.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130369:10)
+      at Request.emit (events.js:189:13)
+      at IncomingMessage.<anonymous> (/usr/local/Cellar/yarn/1.13.0/libexec/lib/cli.js:130291:12)
+      at Object.onceWrapper (events.js:277:13)
+      at IncomingMessage.emit (events.js:194:15)
+      at endReadableNT (_stream_readable.js:1125:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
+
+npm manifest: 
+  {
+    "name": "react-fundamentals-workshop",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Jack Franklin",
+    "license": "MIT",
+    "engines": {
+      "node": ">=8",
+      "npm": "6"
+    },
+    "private": true,
+    "scripts": {
+      "exercise": "NODE_ENV='development' node bin/run-exercise.js",
+      "prettier:write": "prettier --write 'exercises/**/*.js'"
+    },
+    "dependencies": {
+      "chalk": "^2.4.2",
+      "expect": "^24.7.1",
+      "graphql-request": "^1.8.2",
+      "parcel-bundler": "^1.12.3",
+      "prettier": "^1.17.0",
+      "prop-types": "^15.7.2",
+      "react": "16.8",
+      "react-dom": "16.8",
+      "react-redux": "^7.0.2",
+      "react-router-dom": "^5.0.0",
+      "redux": "^4.0.0",
+      "redux-thunk": "^2.3.0",
+      "so-fetch-js": "^0.4.0",
+      "yargs": "^13.2.2"
+    },
+    "devDependencies": {
+      "babel-plugin-transform-class-properties": "^6.24.1",
+      "babel-plugin-transform-object-rest-spread": "^6.26.0",
+      "babel-plugin-transform-runtime": "^6.23.0",
+      "babel-preset-env": "^1.6.1",
+      "babel-preset-react": "^6.24.1",
+      "redux-devtools-extension": "^2.13.5"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
