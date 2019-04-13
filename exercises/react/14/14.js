@@ -1,76 +1,49 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import fetch from 'so-fetch-js'
 
-class Post extends Component {
-  state = {
-    post: null,
-    loading: false,
-    error: false,
-    userPostInput: '',
+const Post = props => {
+  const [userPostInput, setUserPostInput] = useState('')
+
+  const [postIdForSearch, setPostIdForSearch] = useState(null)
+
+  const [post, setPost] = useState(null)
+
+  const onFormSubmit = event => {
+    event.preventDefault()
+    setPostIdForSearch(userPostInput)
   }
 
-  userInputChange = e => {
-    this.setState({ userPostInput: e.target.value })
-  }
+  useEffect(() => {
+    if (!postIdForSearch) return
 
-  onSubmit = e => {
-    e.preventDefault()
-    this.fetchPost(this.state.userPostInput)
-  }
+    // TODO: fill out the rest of the useEffect to ensure that it runs when the user hits submit
 
-  fetchPost(id) {
-    // TODO: make the urlForPost take into account the ID variable
-    const urlForPost = `https://jsonplaceholder.typicode.com/posts/${id}`
+    const urlForPost = `https://jsonplaceholder.typicode.com/posts/${postIdForSearch}`
+  }, [postIdForSearch])
 
-    this.setState({ loading: true })
+  return (
+    <div>
+      <form onSubmit={onFormSubmit} className="search-form">
+        <label>
+          Please enter the ID of a post
+          <input
+            type="text"
+            name="post-id"
+            value={userPostInput}
+            onChange={e => setUserPostInput(e.target.value)}
+          />
+        </label>
+        <button type="submit">Go</button>
+        {/* TODO: add another button that clears out the user input value */}
+      </form>
 
-    fetch(urlForPost)
-      .then(response => {
-        this.setState({ post: response.data, error: false })
-      })
-      .catch(() => {
-        this.setState({ error: true, post: null })
-      })
-      .finally(() => {
-        this.setState({ loading: false })
-      })
-  }
+      {postIdForSearch && <p>The ID you searched for is: {postIdForSearch}</p>}
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.onSubmit} className="search-form">
-          <label>
-            Please enter the ID of a post
-            <input
-              type="text"
-              name="post-id"
-              value={this.state.userPostInput}
-              onChange={this.userInputChange}
-            />
-          </label>
-          <button type="submit">Go</button>
-          {/* TODO: add another button that clears out the user input value, and clears this.state.post */}
-        </form>
-        <div>
-          {this.state.post ? (
-            <div>
-              <h1>{this.state.post.title}</h1>
-              <p>{this.state.post.body}</p>
-            </div>
-          ) : this.state.loading ? (
-            <p>Loading...</p>
-          ) : this.state.error ? (
-            <p>ERROR!!!</p>
-          ) : (
-            <p>Do something!</p>
-          )}
-        </div>
-      </div>
-    )
-  }
+      {post && <div>Post title: {post.title}</div>}
+    </div>
+  )
 }
 
 const App = () => {
