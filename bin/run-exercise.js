@@ -2,6 +2,7 @@ const Bundler = require('parcel-bundler')
 const path = require('path')
 const chalk = require('chalk')
 const fs = require('fs')
+const { exec } = require('child_process')
 
 const { argv } = require('yargs')
 
@@ -66,5 +67,7 @@ const indexFile = generateIndexFile(folderName, exerciseNumber)
 console.log('Exercise running:', chalk.blue(indexFile))
 
 const bundler = new Bundler(indexFile)
-
-bundler.serve(1234)
+exec('npx babel-node exercises/api/write-posts.js', () => {
+  console.log('✅ Ensured dummy database is updated')
+  bundler.serve(1234)
+})
