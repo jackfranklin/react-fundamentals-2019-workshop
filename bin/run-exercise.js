@@ -1,3 +1,5 @@
+/* global require, process */
+
 const Bundler = require('parcel-bundler')
 const path = require('path')
 const chalk = require('chalk')
@@ -69,5 +71,6 @@ console.log('Exercise running:', chalk.blue(indexFile))
 const bundler = new Bundler(indexFile)
 exec('npx babel-node exercises/api/write-posts.js', () => {
   console.log('✅ Ensured dummy database is updated')
+  exec('npx json-server --watch exercises/api/db.json')
   bundler.serve(1234)
 })
