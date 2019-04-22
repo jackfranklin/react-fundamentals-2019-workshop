@@ -1,28 +1,20 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import PropTypes from 'prop-types'
 
-const AskQuestion = () => {
-  return <p>How is your day going today?</p>
-}
+// TODO: can you create a <JournalHeader> component
+// that renders a <div> containing the two headers from below,
+// and then render that from the JournalApp component?
 
-const HelloWorld = props => {
-  // TODO: make the HelloWorld component render the <AskQuestion /> component
+const JournalApp = props => {
   return (
     <div>
-      <h1>
-        {props.greeting}, {props.name}
-      </h1>
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
     </div>
   )
 }
-HelloWorld.propTypes = {
-  name: PropTypes.string.isRequired,
-  greeting: PropTypes.oneOf(['Hello', 'Hi']).isRequired,
-}
 
-const App = () => {
-  return <HelloWorld greeting="Hello" name="Jack" />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(
+  <JournalApp name="Jack" />,
+  document.getElementById('react-root')
+)

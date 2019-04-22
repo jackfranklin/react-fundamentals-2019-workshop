@@ -1,33 +1,34 @@
 import ReactDOM from 'react-dom'
-import React, { Component, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
-const Counter = props => {
-  const [count, setCount] = useState(props.start)
+const JournalHeader = () => {
+  // TODO: can you get rid of the `name` constant, and instead create some
+  // state using useState ? and then when the login button is clicked, set the
+  // name of the logged in person
 
-  const onIncrementClick = () => {
-    setCount(oldCount => oldCount + 1)
+  const name = 'Jack'
+
+  const login = () => {
+    console.log('I was clicked!')
   }
-  // TODO: add another button that decrements the count
 
   return (
-    <div>
-      <p>current count: {count}</p>
-      <button onClick={onIncrementClick}>Click to increment</button>
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {name}</h2>
+      <button className="journal-login" onClick={login}>
+        Login
+      </button>
     </div>
   )
 }
 
-Counter.defaultProps = {
-  start: 0,
+const JournalApp = () => {
+  return (
+    <div>
+      <JournalHeader />
+    </div>
+  )
 }
 
-Counter.propTypes = {
-  start: PropTypes.number,
-}
-
-const App = () => {
-  return <Counter />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

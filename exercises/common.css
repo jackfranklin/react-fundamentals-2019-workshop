@@ -52,6 +52,10 @@ GRAY #AAAAAA
 SILVER #DDDDDD
 */
 
+.journal-header-wrapper {
+  position: relative;
+}
+
 .journal-header {
   font-size: 24px;
   font-weight: normal;
@@ -59,6 +63,23 @@ SILVER #DDDDDD
   color: #001f3f;
   margin: 5px 0 0px 0;
   padding: 0;
+}
+
+.journal-login {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: block;
+  width: 100px;
+  background: #fff;
+  border: 1px solid #001f3f;
+  border-radius: 4px;
+}
+
+.journal-login:hover {
+  background: #0074d9;
+  color: #fff;
+  cursor: pointer;
 }
 
 .journal-subheader {
