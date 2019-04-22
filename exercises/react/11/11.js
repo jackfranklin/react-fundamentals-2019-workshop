@@ -1,51 +1,37 @@
 import ReactDOM from 'react-dom'
 import React, { useState } from 'react'
-import PropTypes from 'prop-types'
+import posts from './posts'
 
-const Count = props => {
-  const onButtonClick = () => {
-    props.onIncrement()
+const JournalHeader = props => {
+  const login = () => {
+    props.setName('Jack')
   }
 
   return (
-    <div>
-      {props.children}
-      <button onClick={onButtonClick}>Increment</button>
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
+      <button className="journal-login" onClick={login}>
+        Login
+      </button>
     </div>
   )
 }
 
-const Counter = props => {
-  const [counts, setCounts] = useState([0, 0, 0])
-
-  const incrementCount = index => {
-    setCounts(oldCounts => {
-      const newCounts = [...oldCounts]
-      newCounts[index] = newCounts[index] + 1
-      return newCounts
-    })
-  }
-
-  // TODO: can you create a button that lets me add another <Count /> component to the page?
-  // hint: you'll probably want to update our counts state to make the array longer every time
-  // the user clicks the button to add another count...
+const JournalApp = () => {
+  const [name, setName] = useState('')
   return (
     <div>
-      {counts.map((count, index) => {
-        return (
-          <Count key={index} onIncrement={() => incrementCount(index)}>
-            <p>
-              Count {index} has the value: <strong>{count}</strong>
-            </p>
-          </Count>
-        )
-      })}
+      <JournalHeader name={name} setName={setName} />
+
+      <ul>
+        {/* TODO: can you create a <Post /> component that gets given a post as a prop and renders it onto the page? */}
+        {posts.map(post => {
+          return <li key={post.id}>{post.title}</li>
+        })}
+      </ul>
     </div>
   )
 }
 
-const App = () => {
-  return <Counter />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))
