@@ -1,19 +1,19 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
 
-const HelloWorld = ({ greeting = 'Hello', name }) => {
+const JournalApp = () => {
+  // TODO: can you update this component so it also renders a h2
+  // that shows the name of the person ?
+  // you should give the h2 a class of "journal-subheader"
+  // HINT: props are passed into a component as the first argument.
   return (
-    <h1>
-      {greeting}, {name} sdlfkjsdlkfjsdlkfjdf
-      <div>
-        lkdjflkjsd
-        <span>sdlkjflskdjflsdjf</span>
-      </div>
-    </h1>
+    <div>
+      <h1 className="journal-header">Journal App</h1>
+    </div>
   )
 }
 
 ReactDOM.render(
-  <HelloWorld name="Jack" />,
+  <JournalApp name="Jack" />,
   document.getElementById('react-root')
 )

@@ -2,8 +2,13 @@
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 18px;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background: #ddd;
+}
 body > h1 {
   border-bottom: 1px solid #111;
   margin-bottom: 30px;
@@ -15,25 +20,52 @@ code {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.search-form input {
-  margin: 10px;
-}
+#react-root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-header {
-  background: #111;
-  color: #fff;
   padding: 10px;
-  display: flex;
+  max-width: 900px;
+  width: 90%;
+  margin: 10px auto;
+  background: #fff;
+  min-height: 400px;
 }
 
-header button {
-  margin-left: auto;
+/*
+https://clrs.cc/
+NAVY #001f3f
+BLUE #0074D9
+AQUA #7FDBFF
+TEAL #39CCCC
+OLIVE #3D9970
+GREEN #2ECC40
+LIME #01FF70
+YELLOW #FFDC00
+ORANGE #FF851B
+RED #FF4136
+MAROON #85144b
+FUCHSIA #F012BE
+PURPLE #B10DC9
+BLACK #111111
+GRAY #AAAAAA
+SILVER #DDDDDD
+*/
+
+.journal-header {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: left;
+  color: #001f3f;
+  margin: 5px 0 0px 0;
+  padding: 0;
 }
 
-.post {
-  border-bottom: 1px solid #111;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+.journal-subheader {
+  color: #001f3f;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .active-link {
