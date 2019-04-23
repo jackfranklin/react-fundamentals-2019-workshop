@@ -1,50 +1,100 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import Post from './post'
+import React, { useState, useEffect } from 'react'
+import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
 
-class PostSearch extends Component {
-  state = {
-    userPostInput: '',
-    searchId: 1,
+const Post = props => {
+  return (
+    <div>
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
+    </div>
+  )
+}
+
+const JournalHeader = props => {
+  const [loginName, setLoginName] = useState('')
+
+  const [isShowingModal, setIsShowingModal] = useState(false)
+
+  const showModal = () => setIsShowingModal(true)
+
+  const onLoginInputChange = event => {
+    setLoginName(event.target.value)
   }
 
-  userInputChange = e => {
-    this.setState({ userPostInput: e.target.value })
+  const onLoginSubmit = event => {
+    event.preventDefault()
+    props.setName(loginName)
+    setIsShowingModal(false)
   }
 
-  onSubmit = e => {
-    e.preventDefault()
-    // TODO: when the user updates the form and hits submit,
-    // the new post is not loaded correctly
-    // can you fix the bug?
-    // HINT: the problem is in post.js, not here!
-    this.setState({ searchId: Number(this.state.userPostInput) })
-  }
+  return (
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
+      <button className="journal-login" onClick={showModal}>
+        Login
+      </button>
 
-  render() {
-    return (
-      <div>
-        <form onSubmit={this.onSubmit} className="search-form">
-          <label>
-            Please enter the ID of a post
+      {isShowingModal && (
+        <div className="journal-login-modal">
+          <span onClick={() => setIsShowingModal(false)}>Cancel</span>
+          <form onSubmit={onLoginSubmit}>
+            <p>Login to your Journal.</p>
             <input
               type="text"
-              name="post-id"
-              value={this.state.userPostInput}
-              onChange={this.userInputChange}
+              value={loginName}
+              placeholder="jack"
+              onChange={onLoginInputChange}
             />
-          </label>
-          <button type="submit">Go</button>
-        </form>
-        <Post id={this.state.searchId} />
-      </div>
-    )
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      )}
+    </div>
+  )
+}
+
+const JournalApp = () => {
+  const userIdForName = name => {
+    return {
+      alice: 1,
+      bob: 2,
+      charlotte: 3,
+    }[name]
   }
+
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState(null)
+
+  useEffect(() => {
+    // TODO: update this useEffect call so it makes a request to fetch posts for a given user Id
+    // which you can do with: /posts?userId=1
+    fetch(`http://localhost:3000/posts`).then(response => {
+      setPosts(response.data)
+    })
+  }, [])
+
+  return (
+    <div>
+      <JournalHeader name={name} setName={setName} />
+
+      {posts ? (
+        <ul>
+          {posts.map(post => {
+            return (
+              <li key={post.id}>
+                <Post post={post} />
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <Spinner />
+      )}
+    </div>
+  )
 }
 
-const App = () => {
-  return <PostSearch />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

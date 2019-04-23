@@ -5,8 +5,8 @@ import fetch from 'so-fetch-js'
 const Post = props => {
   return (
     <div>
-      <a href="">{props.title}</a>
-      <span>Posted on {props.date}</span>
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
     </div>
   )
 }
