@@ -109,6 +109,19 @@ SILVER #DDDDDD
   font-weight: bold;
 }
 
+.post-wrapper {
+  border-bottom: 1px solid #001f3f;
+  padding: 10px;
+}
+
+.post-wrapper > a {
+  display: block;
+}
+
+.post-wrapper .post-contents {
+  font-style: italic;
+}
+
 .spinner {
   margin: 100px auto;
   width: 50px;
