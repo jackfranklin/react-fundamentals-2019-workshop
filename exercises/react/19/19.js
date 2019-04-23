@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import React, { useState, useEffect, useContext } from 'react'
+import React, { useState, useEffect } from 'react'
 import fetch from 'so-fetch-js'
 import Spinner from '../../spinner'
 import JournalHeader from './journal-header'
