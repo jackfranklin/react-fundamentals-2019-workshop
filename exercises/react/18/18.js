@@ -1,54 +1,51 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import withPost from './post'
-import UserInput from './input'
+import React, { useState, useEffect } from 'react'
+import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
+import JournalHeader from './journal-header'
+import Post from './post'
 
-const PostOutput = props =>
-  props.post ? (
+const JournalApp = () => {
+  const userIdForName = name => {
+    return {
+      alice: 1,
+      bob: 2,
+      charlotte: 3,
+    }[name]
+  }
+
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState(null)
+
+  useEffect(() => {
+    const userId = userIdForName(name)
+
+    if (!userId) return
+
+    fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
+      setPosts(response.data)
+    })
+  }, [name])
+
+  return (
     <div>
-      <span>Loaded post ID: {props.post.id}</span>
-      <h1>{props.post.title}</h1>
-      <p>{props.post.body}</p>
+      <JournalHeader name={name} setName={setName} />
+
+      {posts ? (
+        <ul>
+          {posts.map(post => {
+            return (
+              <li key={post.id}>
+                <Post post={post} />
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <Spinner />
+      )}
     </div>
-  ) : (
-    <p>Loading</p>
   )
-
-PostOutput.propTypes = {
-  post: PropTypes.shape({
-    id: PropTypes.number,
-    title: PropTypes.string,
-    body: PropTypes.string,
-  }),
 }
 
-// TODO: create WrappedWithPost which is the higher order component
-// that can be created by passing a component to the withPost function
-// (you should replace the below fake implementation with the proper one)
-const WrappedWithPost = () => <p> TODO: Fix me!</p>
-
-class PostSearch extends Component {
-  state = {
-    searchId: 1,
-  }
-
-  onSubmit = id => {
-    this.setState({ searchId: id })
-  }
-
-  render() {
-    return (
-      <div>
-        <UserInput onSearchInputChange={this.onSubmit} />
-        <WrappedWithPost id={this.state.searchId} />
-      </div>
-    )
-  }
-}
-
-const App = () => {
-  return <PostSearch />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

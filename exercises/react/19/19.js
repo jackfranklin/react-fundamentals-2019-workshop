@@ -1,44 +1,58 @@
 import ReactDOM from 'react-dom'
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState, useEffect } from 'react'
+import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
+import JournalHeader from './journal-header'
 import Post from './post'
-import UserInput from './input'
+import AuthContext from './auth-context'
 
-// PostOutput.propTypes = {
-//   post: PropTypes.shape({
-//     id: PropTypes.number,
-//     title: PropTypes.string,
-//     body: PropTypes.string,
-//   }),
-// }
-
-class PostSearch extends Component {
-  state = {
-    searchId: 1,
+const JournalApp = () => {
+  const userIdForName = name => {
+    return {
+      alice: 1,
+      bob: 2,
+      charlotte: 3,
+    }[name]
   }
 
-  onSubmit = id => {
-    this.setState({ searchId: id })
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState(null)
+
+  const authContextValue = {
+    loggedInUserName: name,
   }
 
-  render() {
-    return (
-      <div>
-        <UserInput onSearchInputChange={this.onSubmit} />
-        {/* TODO: update this render function to output the post if we have one
-             or render "Loading" if we don't have a post
-            */}
-        <Post id={this.state.searchId} render={() => null} />
-        {/* TODO: once you've done that, pull that logic into a PostOutput component
-          * (hint: you'll find the prop types above) and use that within the render func
-          */}
-      </div>
-    )
-  }
+  useEffect(() => {
+    const userId = userIdForName(authContextValue.loggedInUserName)
+
+    if (!userId) return
+
+    fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
+      setPosts(response.data)
+    })
+  }, [authContextValue.loggedInUserName])
+
+  return (
+    <div>
+      <AuthContext.Provider value={authContextValue}>
+        <JournalHeader name={name} setName={setName} />
+
+        {posts ? (
+          <ul>
+            {posts.map(post => {
+              return (
+                <li key={post.id}>
+                  <Post post={post} />
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <Spinner />
+        )}
+      </AuthContext.Provider>
+    </div>
+  )
 }
 
-const App = () => {
-  return <PostSearch />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

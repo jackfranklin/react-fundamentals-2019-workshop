@@ -1,42 +1,16 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import fetch from 'so-fetch-js'
+import React from 'react'
 
-const withPost = ChildComponent => {
-  return class Post extends Component {
-    static propTypes = {
-      id: PropTypes.number,
-    }
+/* TODO: update this compoonent so when you click on its title, it shows a <div> with the post's contents inside
+ * give the post div the class of "post-contents"
+ */
 
-    state = {
-      post: null,
-    }
-
-    componentDidMount() {
-      this.fetchPost()
-    }
-
-    componentDidUpdate(prevProps, prevState) {
-      if (prevProps.id !== this.props.id) {
-        this.setState({ post: null })
-        this.fetchPost()
-      }
-    }
-
-    fetchPost() {
-      const urlForPost = `https://jsonplaceholder.typicode.com/posts/${
-        this.props.id
-      }`
-
-      fetch(urlForPost).then(response => {
-        this.setState({ post: response.data })
-      })
-    }
-
-    render() {
-      return <ChildComponent {...this.props} post={this.state.post} />
-    }
-  }
+const Post = props => {
+  return (
+    <div className="post-wrapper">
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
+    </div>
+  )
 }
 
-export default withPost
+export default Post

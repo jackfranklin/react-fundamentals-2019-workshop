@@ -2,29 +2,28 @@ import ReactDOM from 'react-dom'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const HelloWorld = props => {
+const JournalApp = props => {
   return (
-    <h1>
-      Hello, {props.name}, {props.age}, {props.colour}
-    </h1>
+    <div>
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">
+        Journal for {props.name}, {props.age} in {props.location}
+      </h2>
+    </div>
   )
 }
 
-// TODO: fix `bunchOfProps` to get rid of the colour prop warning
-// add a proptype declaration for age and make sure it's a number
-// you can find more about proptypes here: https://reactjs.org/docs/typechecking-with-proptypes.html
-HelloWorld.propTypes = {
-  name: PropTypes.string.isRequired,
-  colour: PropTypes.oneOf(['blue', 'red']).isRequired,
+JournalApp.propTypes = {
+  // TODO: define the prop type for the name, age and location prop
 }
 
 const bunchOfProps = {
   name: 'Jack',
-  age: 25,
-  colour: 'green',
+  age: 26,
+  location: 'London',
 }
 
 ReactDOM.render(
-  <HelloWorld {...bunchOfProps} />,
+  <JournalApp {...bunchOfProps} />,
   document.getElementById('react-root')
 )

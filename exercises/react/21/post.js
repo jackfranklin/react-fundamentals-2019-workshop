@@ -1,25 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import UserActions from './user-actions'
+import React, { useState } from 'react'
 
-export default class Post extends Component {
-  static propTypes = {
-    post: PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-      body: PropTypes.string.isRequired,
-    }).isRequired,
+const Post = props => {
+  const [expanded, setExpanded] = useState(false)
+
+  const onClickTitle = event => {
+    event.preventDefault()
+    setExpanded(e => !e)
   }
 
-  render() {
-    const { id, title, body } = this.props.post
-
-    return (
-      <div className="post">
-        <h3>{title}</h3>
-        <p>{body}</p>
-        <UserActions postId={id} />
-      </div>
-    )
-  }
+  return (
+    <div className="post-wrapper">
+      <a href="" onClick={onClickTitle}>
+        {props.post.title}
+      </a>
+      <span>Posted on {props.post.date}</span>
+      {expanded && <div className="post-contents">{props.post.body}</div>}
+    </div>
+  )
 }
+
+export default Post

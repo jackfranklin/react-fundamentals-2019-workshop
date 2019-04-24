@@ -1,5 +1,8 @@
-import React from 'react'
+import { createContext } from 'react'
 
-const AuthContext = React.createContext(false)
+const AuthContext = createContext({
+  loggedInUserName: null,
+  setLoggedInUser: () => {},
+})
 
 export default AuthContext

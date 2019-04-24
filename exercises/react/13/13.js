@@ -1,46 +1,61 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
 
 const Post = props => {
-  const [userPostInput, setUserPostInput] = useState('')
-
-  const [postIdForSearch, setPostIdForSearch] = useState(null)
-
-  const onFormSubmit = event => {
-    event.preventDefault()
-    // TODO: when the form is submitted, update the PostIdForSearch so
-    // we show the user what ID we're going to search for
-    // (Note: we won't do the actual data fetching in this exercise, it's in the next one)
-  }
-
   return (
     <div>
-      <form onSubmit={onFormSubmit} className="search-form">
-        <label>
-          Please enter the ID of a post
-          <input
-            type="text"
-            name="post-id"
-            /* TODO: make this value prop be attached to the userPostInput state */
-            value={''}
-            onChange={e => {
-              // TODO: make this onChange event update the value of the input
-            }}
-          />
-        </label>
-        <button type="submit">Go</button>
-        {/* TODO: add another button that clears out the user input value */}
-      </form>
-
-      {postIdForSearch && <p>The ID you searched for is: {postIdForSearch}</p>}
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
     </div>
   )
 }
 
-const App = () => {
-  return <Post />
+const JournalHeader = props => {
+  const login = () => {
+    props.setName('Jack')
+  }
+
+  return (
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
+      <button className="journal-login" onClick={login}>
+        Login
+      </button>
+    </div>
+  )
 }
 
-ReactDOM.render(<App />, document.getElementById('react-root'))
+const JournalApp = () => {
+  const [name, setName] = useState('')
+  // TODO: update this so the default state of posts is `null`
+  const [posts, setPosts] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:3000/posts').then(response => {
+      setPosts(response.data)
+    })
+  }, [])
+
+  return (
+    <div>
+      <JournalHeader name={name} setName={setName} />
+
+      {/* TODO: update this so we check if posts === null
+and if it is, we render the <Spinner /> component (which is already imported for you) */}
+      <ul>
+        {posts.map(post => {
+          return (
+            <li key={post.id}>
+              <Post post={post} />
+            </li>
+          )
+        })}
+      </ul>
+    </div>
+  )
+}
+
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

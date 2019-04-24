@@ -1,52 +1,73 @@
 import ReactDOM from 'react-dom'
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import Posts from './posts'
+import React, { useState, useEffect, useMemo } from 'react'
+import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
+import JournalHeader from './journal-header'
+import Post from './post'
 import AuthContext from './auth-context'
+import usePostsLoader from './use-posts-loader.js'
 
-class MyBlog extends Component {
-  state = {
-    signedIn: false,
+const JournalApp = () => {
+  const userIdForName = name => {
+    return {
+      alice: 1,
+      bob: 2,
+      charlotte: 3,
+    }[name]
   }
 
-  signIn = () => {
-    this.setState({ signedIn: true })
+  const [name, setName] = useState('')
+
+  const authContextValue = useMemo(() => {
+    return {
+      loggedInUserName: name,
+      setLoggedInUser: setName,
+    }
+  }, [name])
+
+  // TODO: make this work!
+  // all the code you should write is in ./use-posts-loader.js
+  const posts = usePostsLoader(userIdForName(authContextValue.loggedInUserName))
+
+  const logInAs = username => event => {
+    event.preventDefault()
+
+    setName(username)
   }
 
-  signOut = () => {
-    this.setState({ signedIn: false })
-  }
+  return (
+    <div>
+      <AuthContext.Provider value={authContextValue}>
+        <JournalHeader />
+        <span>
+          Log in as{' '}
+          <a href="" onClick={logInAs('alice')}>
+            Alice
+          </a>
+        </span>
+        <span>
+          Log in as{' '}
+          <a href="" onClick={logInAs('bob')}>
+            Bob
+          </a>
+        </span>
 
-  // TODO: can you extend the AuthContext so it also passed down the user's name?
-  // add a form that allows the user to sign in with a particular name, and then display that across
-  // the app.
-
-  render() {
-    return (
-      <div>
-        <header>
-          {this.state.signedIn ? (
-            <Fragment>
-              <span>Signed in as jack</span>
-              <button onClick={this.signOut}>Sign Out</button>
-            </Fragment>
-          ) : (
-            <button onClick={this.signIn}>Sign In</button>
-          )}
-        </header>
-        <div>
-          <h1>Blog posts by Jack</h1>
-          <AuthContext.Provider value={this.state.signedIn}>
-            <Posts />
-          </AuthContext.Provider>
-        </div>
-      </div>
-    )
-  }
+        {posts ? (
+          <ul>
+            {posts.map(post => {
+              return (
+                <li key={post.id}>
+                  <Post post={post} />
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <Spinner />
+        )}
+      </AuthContext.Provider>
+    </div>
+  )
 }
 
-const App = () => {
-  return <MyBlog />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

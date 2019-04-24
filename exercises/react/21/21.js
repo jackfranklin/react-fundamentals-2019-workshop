@@ -1,48 +1,61 @@
 import ReactDOM from 'react-dom'
-import React, { Component, Fragment } from 'react'
-import PropTypes from 'prop-types'
-import Posts from './posts'
+import React, { useState, useEffect, useMemo } from 'react'
+import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
+import JournalHeader from './journal-header'
+import Post from './post'
 import AuthContext from './auth-context'
 
-class MyBlog extends Component {
-  state = {
-    signedIn: false,
+const JournalApp = () => {
+  const userIdForName = name => {
+    return {
+      alice: 1,
+      bob: 2,
+      charlotte: 3,
+    }[name]
   }
 
-  signIn = () => {
-    this.setState({ signedIn: true })
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState(null)
+
+  // TODO: wrap this in a useMemo call
+  console.log('Updating the context')
+  const authContextValue = {
+    loggedInUserName: name,
+    setLoggedInUser: setName,
   }
 
-  signOut = () => {
-    this.setState({ signedIn: false })
-  }
+  useEffect(() => {
+    const userId = userIdForName(authContextValue.loggedInUserName)
 
-  render() {
-    return (
-      <div>
-        <header>
-          {this.state.signedIn ? (
-            <Fragment>
-              <span>Signed in as jack</span>
-              <button onClick={this.signOut}>Sign Out</button>
-            </Fragment>
-          ) : (
-            <button onClick={this.signIn}>Sign In</button>
-          )}
-        </header>
-        <div>
-          <h1>Blog posts by Jack</h1>
-          <AuthContext.Provider value={this.state.signedIn}>
-            <Posts />
-          </AuthContext.Provider>
-        </div>
-      </div>
-    )
-  }
+    if (!userId) return
+
+    fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
+      setPosts(response.data)
+    })
+  }, [authContextValue.loggedInUserName])
+
+  return (
+    <div>
+      <AuthContext.Provider value={authContextValue}>
+        <JournalHeader />
+
+        {posts ? (
+          <ul>
+            {posts.map(post => {
+              return (
+                <li key={post.id}>
+                  <Post post={post} />
+                </li>
+              )
+            })}
+          </ul>
+        ) : (
+          <Spinner />
+        )}
+      </AuthContext.Provider>
+    </div>
+  )
 }
 
-const App = () => {
-  return <MyBlog />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

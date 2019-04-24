@@ -1,53 +1,91 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import fetch from 'so-fetch-js'
+import Spinner from '../../spinner'
 
 const Post = props => {
-  const [userPostInput, setUserPostInput] = useState('')
-
-  const [postIdForSearch, setPostIdForSearch] = useState(null)
-
-  const [post, setPost] = useState(null)
-
-  const onFormSubmit = event => {
-    event.preventDefault()
-    setPostIdForSearch(userPostInput)
-  }
-
-  useEffect(() => {
-    if (!postIdForSearch) return
-
-    // TODO: fill out the rest of the useEffect to ensure that it runs when the user hits submit
-
-    const urlForPost = `https://jsonplaceholder.typicode.com/posts/${postIdForSearch}`
-  }, [postIdForSearch])
-
   return (
     <div>
-      <form onSubmit={onFormSubmit} className="search-form">
-        <label>
-          Please enter the ID of a post
-          <input
-            type="text"
-            name="post-id"
-            value={userPostInput}
-            onChange={e => setUserPostInput(e.target.value)}
-          />
-        </label>
-        <button type="submit">Go</button>
-        {/* TODO: add another button that clears out the user input value */}
-      </form>
-
-      {postIdForSearch && <p>The ID you searched for is: {postIdForSearch}</p>}
-
-      {post && <div>Post title: {post.title}</div>}
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
     </div>
   )
 }
 
-const App = () => {
-  return <Post />
+const JournalHeader = props => {
+  const [loginName, setLoginName] = useState('')
+
+  const [isShowingModal, setIsShowingModal] = useState(false)
+
+  const showModal = () => setIsShowingModal(true)
+
+  const onLoginInputChange = event => {
+    // TODO: set the state of the loginName here
+  }
+
+  const onLoginSubmit = event => {
+    event.preventDefault()
+
+    // TODO: call props.setName here, passing in the name
+    // from the input field
+  }
+
+  return (
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
+      <button className="journal-login" onClick={showModal}>
+        Login
+      </button>
+
+      {isShowingModal && (
+        <div className="journal-login-modal">
+          <span onClick={() => setIsShowingModal(false)}>Cancel</span>
+          <form onSubmit={onLoginSubmit}>
+            <p>Login to your Journal.</p>
+            <input
+              type="text"
+              value={loginName}
+              placeholder="jack"
+              onChange={onLoginInputChange}
+            />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
+      )}
+    </div>
+  )
 }
 
-ReactDOM.render(<App />, document.getElementById('react-root'))
+const JournalApp = () => {
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState(null)
+
+  useEffect(() => {
+    fetch('http://localhost:3000/posts').then(response => {
+      setPosts(response.data)
+    })
+  }, [])
+
+  return (
+    <div>
+      <JournalHeader name={name} setName={setName} />
+
+      {posts ? (
+        <ul>
+          {posts.map(post => {
+            return (
+              <li key={post.id}>
+                <Post post={post} />
+              </li>
+            )
+          })}
+        </ul>
+      ) : (
+        <Spinner />
+      )}
+    </div>
+  )
+}
+
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

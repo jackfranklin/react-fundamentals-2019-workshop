@@ -1,32 +1,35 @@
 import ReactDOM from 'react-dom'
-import React, { Component, useState } from 'react'
-import PropTypes from 'prop-types'
+import React, { useState } from 'react'
 
-// notice that Count has no idea who its parent is
-const Count = props => {
-  return <p>Count: {props.count}</p>
-}
+// TODO: can you lift the `name` state up into `JournalApp`
+// and pass it down as a prop into journal header?
+// DO NOT worry about the login button for now!
+// we're going to talk about this in the next exercise :)
 
-const Counter = props => {
-  const [count, setCount] = useState(0)
+const JournalHeader = () => {
+  const [name, setName] = useState('')
 
-  const onButtonClickIncrement = () => {
-    setCount(oldCount => oldCount + 1)
+  const login = () => {
+    console.log('Do not worry about implementing me right now')
   }
 
-  // TODO: add two more count components
-  // one that shows the next value below and another that
-  // shows the next value up from the current count
-
   return (
-    <div>
-      <Count count={count} />
-      <button onClick={onButtonClickIncrement}>Click to increment</button>
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {name}</h2>
+      <button className="journal-login" onClick={login}>
+        Login
+      </button>
     </div>
   )
 }
-const App = () => {
-  return <Counter />
+
+const JournalApp = () => {
+  return (
+    <div>
+      <JournalHeader />
+    </div>
+  )
 }
 
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

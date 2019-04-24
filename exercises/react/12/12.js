@@ -1,49 +1,66 @@
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types'
 import fetch from 'so-fetch-js'
 
 const Post = props => {
-  const urlForPost = `https://jsonplaceholder.typicode.com/posts/${props.id}`
+  return (
+    <div>
+      <a href="">{props.post.title}</a>
+      <span>Posted on {props.post.date}</span>
+    </div>
+  )
+}
 
-  const [post, setPost] = useState(null)
+const JournalHeader = props => {
+  const login = () => {
+    props.setName('Jack')
+  }
+
+  return (
+    <div className="journal-header-wrapper">
+      <h1 className="journal-header">Journal App</h1>
+      <h2 className="journal-subheader">Journal for {props.name}</h2>
+      <button className="journal-login" onClick={login}>
+        Login
+      </button>
+    </div>
+  )
+}
+
+const JournalApp = () => {
+  const [name, setName] = useState('')
+  const [posts, setPosts] = useState([])
 
   useEffect(() => {
     console.log('I get run on every render')
 
-    // let this code run to see the increment looping
-    // setPost({
-    //   title: 'testing',
-    //   body: 'testing',
-    // })
+    // let this code run to see the infinite looping happen
+    // warning: this might crash your browser!
+    // setPosts([])
 
-    // TODO: run this code to fetch the post ensuring that you add the empty
+    // TODO: run this code to fetch the posts ensuring that you add the empty
     // dependencies array to the useEffect call so it doesn't cause an infinite
     // loop!
 
-    // NOTE: you will see an eslint warning when you do this, but that's fine.
-    // We're going to chat about why that is shortly 👌
-
-    // fetch(urlForPost).then(response => {
-    // response.data is the post
+    // fetch('http://localhost:3000/posts').then(response => {
     // })
   })
 
-  return post ? (
+  return (
     <div>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+      <JournalHeader name={name} setName={setName} />
+
+      <ul>
+        {posts.map(post => {
+          return (
+            <li key={post.id}>
+              <Post post={post} />
+            </li>
+          )
+        })}
+      </ul>
     </div>
-  ) : (
-    <p>Loading the post!</p>
   )
 }
 
-Post.propTypes = {
-  id: PropTypes.number.isRequired,
-}
-const App = () => {
-  return <Post id={1} />
-}
-
-ReactDOM.render(<App />, document.getElementById('react-root'))
+ReactDOM.render(<JournalApp />, document.getElementById('react-root'))

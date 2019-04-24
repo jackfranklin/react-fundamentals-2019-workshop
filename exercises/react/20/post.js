@@ -1,44 +1,22 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import fetch from 'so-fetch-js'
+import React, { useState } from 'react'
 
-export default class Post extends Component {
-  static propTypes = {
-    id: PropTypes.number,
-    // TODO: update the prop types so we take children or render
-    // (you can't declare this explicitly, but you can declare two props that
-    // are both not required)
-    children: PropTypes.func.isRequired,
+const Post = props => {
+  const [expanded, setExpanded] = useState(false)
+
+  const onClickTitle = event => {
+    event.preventDefault()
+    setExpanded(e => !e)
   }
 
-  state = {
-    post: null,
-  }
-
-  componentDidMount() {
-    this.fetchPost()
-  }
-
-  componentDidUpdate(prevProps, prevState) {
-    if (prevProps.id !== this.props.id) {
-      this.setState({ post: null })
-      this.fetchPost()
-    }
-  }
-
-  fetchPost() {
-    const urlForPost = `https://jsonplaceholder.typicode.com/posts/${
-      this.props.id
-    }`
-
-    fetch(urlForPost).then(response => {
-      this.setState({ post: response.data })
-    })
-  }
-
-  render() {
-    // TODO: don't assume this.props.children here
-    // and also see if we have this.props.render
-    return this.props.children(this.state.post)
-  }
+  return (
+    <div className="post-wrapper">
+      <a href="" onClick={onClickTitle}>
+        {props.post.title}
+      </a>
+      <span>Posted on {props.post.date}</span>
+      {expanded && <div className="post-contents">{props.post.body}</div>}
+    </div>
+  )
 }
+
+export default Post

@@ -2,8 +2,13 @@
   font-family: 'Helvetica', Arial, sans-serif;
   font-size: 18px;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  background: #ddd;
+}
 body > h1 {
   border-bottom: 1px solid #111;
   margin-bottom: 30px;
@@ -15,28 +20,166 @@ code {
   font-family: 'Courier New', Courier, monospace;
 }
 
-.search-form input {
-  margin: 10px;
-}
+#react-root {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 
-header {
-  background: #111;
-  color: #fff;
   padding: 10px;
-  display: flex;
+  max-width: 900px;
+  width: 90%;
+  margin: 10px auto;
+  background: #fff;
+  min-height: 400px;
 }
 
-header button {
-  margin-left: auto;
+/*
+https://clrs.cc/
+NAVY #001f3f
+BLUE #0074D9
+AQUA #7FDBFF
+TEAL #39CCCC
+OLIVE #3D9970
+GREEN #2ECC40
+LIME #01FF70
+YELLOW #FFDC00
+ORANGE #FF851B
+RED #FF4136
+MAROON #85144b
+FUCHSIA #F012BE
+PURPLE #B10DC9
+BLACK #111111
+GRAY #AAAAAA
+SILVER #DDDDDD
+*/
+
+.journal-header-wrapper {
+  position: relative;
 }
 
-.post {
-  border-bottom: 1px solid #111;
-  margin-bottom: 10px;
-  padding-bottom: 10px;
+.journal-header {
+  font-size: 24px;
+  font-weight: normal;
+  text-align: left;
+  color: #001f3f;
+  margin: 5px 0 0px 0;
+  padding: 0;
+}
+
+.journal-login {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: block;
+  width: 100px;
+  background: #fff;
+  border: 1px solid #001f3f;
+  border-radius: 4px;
+}
+
+.journal-login:hover {
+  background: #0074d9;
+  color: #fff;
+  cursor: pointer;
+}
+
+.journal-subheader {
+  color: #001f3f;
+  font-weight: normal;
+  margin: 0;
+  padding: 0;
+}
+
+#react-root ul {
+  margin: 10px 0;
+  padding-left: 20px;
+}
+
+.journal-login-modal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #001f3f;
+  color: #fff;
+  padding: 30px;
+  border-radius: 3px;
 }
 
 .active-link {
   color: red;
   font-weight: bold;
+}
+
+.post-wrapper {
+  border-bottom: 1px solid #001f3f;
+  padding: 10px;
+}
+
+.post-wrapper > a {
+  display: block;
+}
+
+.post-wrapper .post-contents {
+  font-style: italic;
+}
+
+.spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+  font-size: 10px;
+}
+
+.spinner > div {
+  background-color: #333;
+  height: 100%;
+  width: 6px;
+  display: inline-block;
+
+  -webkit-animation: sk-stretchdelay 1.2s infinite ease-in-out;
+  animation: sk-stretchdelay 1.2s infinite ease-in-out;
+}
+
+.spinner .rect2 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+
+.spinner .rect3 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+
+.spinner .rect4 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+
+.spinner .rect5 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+@-webkit-keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    -webkit-transform: scaleY(1);
+  }
+}
+
+@keyframes sk-stretchdelay {
+  0%,
+  40%,
+  100% {
+    transform: scaleY(0.4);
+    -webkit-transform: scaleY(0.4);
+  }
+  20% {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
 }
