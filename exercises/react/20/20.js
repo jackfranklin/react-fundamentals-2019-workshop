@@ -35,7 +35,8 @@ const JournalApp = () => {
   return (
     <div>
       <AuthContext.Provider value={authContextValue}>
-        <JournalHeader name={name} setName={setName} />
+        {/* TODO: put the setName function on the AuthContext so that JournalHeader can use that rather than take a prop*/}
+        <JournalHeader setName={setName} />
 
         {posts ? (
           <ul>

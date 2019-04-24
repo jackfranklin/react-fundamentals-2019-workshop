@@ -20,6 +20,7 @@ const JournalApp = () => {
 
   const authContextValue = {
     loggedInUserName: name,
+    setLoggedInUser: setName,
   }
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const JournalApp = () => {
   return (
     <div>
       <AuthContext.Provider value={authContextValue}>
-        <JournalHeader name={name} setName={setName} />
+        <JournalHeader />
 
         {posts ? (
           <ul>
