@@ -1,5 +1,3 @@
-/* global require, process */
-
 const Bundler = require('parcel-bundler')
 const path = require('path')
 const chalk = require('chalk')
