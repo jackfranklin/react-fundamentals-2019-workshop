@@ -75,10 +75,17 @@ const babelNodePath = path.join(
   'babel-node'
 )
 
+const jsonServerPath = path.join(
+  process.cwd(),
+  'node_modules',
+  '.bin',
+  'json-server'
+)
+
 const bundler = new Bundler(indexFile)
 exec(`${babelNodePath} exercises/api/write-posts.js`, () => {
   console.log('✅ Ensured dummy database is updated')
-  exec('npx json-server --watch exercises/api/db.json')
+  exec(`${jsonServerPath} --watch exercises/api/db.json`)
   console.log('✅ Running demo API on localhost:3000')
   bundler.serve(1234)
 })

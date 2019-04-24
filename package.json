@@ -10,7 +10,7 @@
   },
   "private": true,
   "scripts": {
-    "exercise": "NODE_ENV='development' node bin/run-exercise.js",
+    "exercise": "cross-env NODE_ENV=development node bin/run-exercise.js",
     "prettier:write": "prettier --write 'exercises/**/*.js'"
   },
   "dependencies": {
@@ -23,6 +23,7 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
     "date-fns": "^1.30.1",
     "eslint": "^5.16.0",
     "eslint-config-prettier": "^4.1.0",
