@@ -118,6 +118,11 @@ SILVER #DDDDDD
   display: block;
 }
 
+.toggle {
+  display: block;
+  border: 1px solid #111;
+}
+
 .post-wrapper .post-contents {
   font-style: italic;
 }

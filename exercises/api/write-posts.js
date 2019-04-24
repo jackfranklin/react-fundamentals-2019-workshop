@@ -6,6 +6,10 @@ import fs from 'fs'
 import path from 'path'
 import existingDb from './db.json'
 
+const randomTrueOrFalse = () => !!(Math.random() < 0.5)
+
+console.log('got existing DB', existingDb)
+
 if (!(existingDb.posts && existingDb.posts.length > 0)) {
   console.log('Writing new posts to fake DB')
   const posts = [
@@ -15,6 +19,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 2,
@@ -22,6 +27,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 3,
@@ -29,6 +35,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 4,
@@ -36,6 +43,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 5,
@@ -43,6 +51,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 6,
@@ -50,6 +59,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
     {
       id: 7,
@@ -57,6 +67,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       date: getRandomDate(),
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
     },
   ]
 

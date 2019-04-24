@@ -68,8 +68,15 @@ const indexFile = generateIndexFile(folderName, exerciseNumber)
 
 console.log('Exercise running:', chalk.blue(indexFile))
 
+const babelNodePath = path.join(
+  process.cwd(),
+  'node_modules',
+  '.bin',
+  'babel-node'
+)
+
 const bundler = new Bundler(indexFile)
-exec('npx babel-node exercises/api/write-posts.js', () => {
+exec(`${babelNodePath} exercises/api/write-posts.js`, () => {
   console.log('✅ Ensured dummy database is updated')
   exec('npx json-server --watch exercises/api/db.json')
   console.log('✅ Running demo API on localhost:3000')
