@@ -5,6 +5,7 @@ import Spinner from '../../spinner'
 import JournalHeader from './journal-header'
 import Post from './post'
 import AuthContext from './auth-context'
+import usePostsLoader from './use-posts-loader.js'
 
 const JournalApp = () => {
   const userIdForName = name => {
@@ -16,29 +17,40 @@ const JournalApp = () => {
   }
 
   const [name, setName] = useState('')
-  const [posts, setPosts] = useState(null)
 
-  // TODO: wrap this in a useMemo call
-  console.log('Updating the context')
-  const authContextValue = {
-    loggedInUserName: name,
-    setLoggedInUser: setName,
+  const authContextValue = useMemo(() => {
+    return {
+      loggedInUserName: name,
+      setLoggedInUser: setName,
+    }
+  }, [name])
+
+  // TODO: make this work!
+  // all the code you should write is in ./use-posts-loader.js
+  const posts = usePostsLoader(userIdForName(authContextValue.loggedInUserName))
+
+  const logInAs = username => event => {
+    event.preventDefault()
+
+    setName(username)
   }
-
-  useEffect(() => {
-    const userId = userIdForName(authContextValue.loggedInUserName)
-
-    if (!userId) return
-
-    fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
-      setPosts(response.data)
-    })
-  }, [authContextValue.loggedInUserName])
 
   return (
     <div>
       <AuthContext.Provider value={authContextValue}>
         <JournalHeader />
+        <span>
+          Log in as{' '}
+          <a href="" onClick={logInAs('alice')}>
+            Alice
+          </a>
+        </span>
+        <span>
+          Log in as{' '}
+          <a href="" onClick={logInAs('bob')}>
+            Bob
+          </a>
+        </span>
 
         {posts ? (
           <ul>
