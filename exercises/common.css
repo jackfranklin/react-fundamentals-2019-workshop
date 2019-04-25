@@ -118,6 +118,15 @@ SILVER #DDDDDD
   display: block;
 }
 
+.post-active {
+  background: #ddd;
+  margin: 10px 0;
+}
+
+.post-active > a {
+  font-size: 30px;
+}
+
 .toggle {
   display: block;
   border: 1px solid #111;

@@ -69,6 +69,30 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
     },
+    {
+      id: 8,
+      title: 'Watched the 2018 world cup higlights again',
+      date: getRandomDate(),
+      body: faker.lorem.paragraphs(),
+      userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
+    },
+    {
+      id: 9,
+      title: 'Went to a cracking react workshop',
+      date: getRandomDate(),
+      body: faker.lorem.paragraphs(),
+      userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
+    },
+    {
+      id: 10,
+      title: 'did some tweeting',
+      date: getRandomDate(),
+      body: faker.lorem.paragraphs(),
+      userId: faker.random.number(3),
+      published: randomTrueOrFalse(),
+    },
   ]
 
   fs.writeFile(
