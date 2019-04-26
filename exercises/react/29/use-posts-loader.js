@@ -19,21 +19,24 @@ const usePostsLoader = userId => {
   const [state, dispatch] = useReducer(reducer, initialState)
 
   useEffect(() => {
+    /* TODO:
+     * update this code to use our reducer
+     * and GET RID of the postsCache state that we have
+     */
+
     if (!userId) return
 
     if (postsCache[userId]) {
       return
     } else {
       fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
-        setPostsCache(cache => ({
-          ...cache,
-          [userId]: response.data,
-        }))
+        // TODO: dispatch the right action here so the posts
+        // get put into the cache
       })
     }
   }, [userId, postsCache])
 
-  return postsCache[userId]
+  return state[userId]
 }
 
 export default usePostsLoader

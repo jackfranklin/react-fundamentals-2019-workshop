@@ -36,9 +36,6 @@ const wrapWithAuth = Component => {
   }
 
   return WrappedComponent
-  // TODO: can you implement wrapWithAuth
-  // and then update 28.js so we use wrapWithAuth
-  // rather than wrapping our app in the <AuthProvider>
 }
 
 export { useAuth, AuthProvider, wrapWithAuth }

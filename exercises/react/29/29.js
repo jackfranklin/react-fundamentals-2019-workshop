@@ -78,9 +78,6 @@ const JournalApp = () => {
   )
 }
 
-ReactDOM.render(
-  <AuthProvider>
-    <JournalApp />
-  </AuthProvider>,
-  document.getElementById('react-root')
-)
+const JournalWithAuth = wrapWithAuth(JournalApp)
+
+ReactDOM.render(<JournalWithAuth />, document.getElementById('react-root'))

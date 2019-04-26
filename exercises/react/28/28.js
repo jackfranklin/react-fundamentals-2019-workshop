@@ -78,6 +78,7 @@ const JournalApp = () => {
   )
 }
 
+// TODO: update this to not wrap with AuthProvider but to use the wrapWithAuth function
 ReactDOM.render(
   <AuthProvider>
     <JournalApp />

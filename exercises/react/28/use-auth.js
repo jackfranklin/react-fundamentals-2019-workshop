@@ -27,18 +27,14 @@ const AuthProvider = props => {
 }
 
 const wrapWithAuth = Component => {
-  const WrappedComponent = props => {
-    return (
-      <AuthProvider>
-        <Component {...props} />
-      </AuthProvider>
-    )
-  }
-
-  return WrappedComponent
   // TODO: can you implement wrapWithAuth
   // and then update 28.js so we use wrapWithAuth
   // rather than wrapping our app in the <AuthProvider>
+  const WrappedComponent = props => {
+    return Component
+  }
+
+  return WrappedComponent
 }
 
 export { useAuth, AuthProvider, wrapWithAuth }
