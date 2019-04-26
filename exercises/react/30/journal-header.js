@@ -1,10 +1,17 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import LoginModal from './login-modal'
-import AuthContext from './auth-context'
 
 const JournalHeader = props => {
   const [isShowingModal, setIsShowingModal] = useState(false)
-  const { loggedInUserName, setLoggedInUser } = useContext(AuthContext)
+
+  const loggedInUserName = props.loggedInUser.name
+
+  const setLoggedInUser = name => {
+    props.dispatch({
+      type: 'logUserIn',
+      newUserName: name,
+    })
+  }
 
   const showModal = () => setIsShowingModal(true)
 
