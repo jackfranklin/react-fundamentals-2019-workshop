@@ -7,6 +7,7 @@ import React, { useState } from 'react'
 // we're going to talk about this in the next exercise :)
 
 const JournalHeader = () => {
+  // this state should be defined within JournalApp on line 29
   const [name, setName] = useState('')
 
   const login = () => {
@@ -26,7 +27,7 @@ const JournalHeader = () => {
 
 const JournalApp = () => {
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader />
     </div>
   )

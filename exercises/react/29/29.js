@@ -35,7 +35,7 @@ const JournalApp = () => {
   }, [])
 
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader />
       <span>
         Log in as:{' '}

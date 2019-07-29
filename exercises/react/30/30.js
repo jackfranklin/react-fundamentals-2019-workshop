@@ -80,7 +80,7 @@ const JournalApp = () => {
   }, [])
 
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader loggedInUser={state.loggedInUser} dispatch={dispatch} />
       <span>
         Log in as:{' '}

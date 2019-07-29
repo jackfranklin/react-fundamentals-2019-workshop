@@ -4,7 +4,7 @@ import fetch from 'so-fetch-js'
 
 const Post = props => {
   return (
-    <div>
+    <div className="post">
       <a href="">{props.post.title}</a>
       <span>Posted on {props.post.date}</span>
     </div>
@@ -47,7 +47,7 @@ const JournalApp = () => {
   })
 
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader name={name} setName={setName} />
 
       <ul>

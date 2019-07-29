@@ -71,7 +71,7 @@ const JournalApp = () => {
   }, [name])
 
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader name={name} setName={setName} />
 
       {posts ? (

@@ -22,7 +22,7 @@ const JournalHeader = props => {
 const JournalApp = () => {
   const [name, setName] = useState('')
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader name={name} setName={setName} />
 
       <ul>{/* TODO: can you list the posts here, by mapping over them? */}</ul>

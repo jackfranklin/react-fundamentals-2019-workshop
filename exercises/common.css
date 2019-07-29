@@ -33,34 +33,40 @@ code {
 }
 
 /*
-https://clrs.cc/
-NAVY #001f3f
-BLUE #0074D9
-AQUA #7FDBFF
-TEAL #39CCCC
-OLIVE #3D9970
-GREEN #2ECC40
-LIME #01FF70
-YELLOW #FFDC00
-ORANGE #FF851B
-RED #FF4136
-MAROON #85144b
-FUCHSIA #F012BE
-PURPLE #B10DC9
-BLACK #111111
-GRAY #AAAAAA
-SILVER #DDDDDD
+colours from https://clrs.cc/
 */
+
+:root {
+  --navy: #001f3f;
+  --blue: #0074d9;
+  --aqua: #7fdbff;
+  --teal: #39cccc;
+  --olive: #3d9970;
+  --green: #2ecc40;
+  --lime: #01ff70;
+  --yellow: #ffdc00;
+  --orange: #ff851b;
+  --red: #ff4136;
+  --maroon: #85144b;
+  --fuchsia: #f012be;
+  --purple: #b10dc9;
+  --black: #111111;
+  --gray: #aaaaaa;
+  --silver: #dddddd;
+}
 
 .journal-header-wrapper {
   position: relative;
+  border-bottom: 1px solid var(--blue);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .journal-header {
   font-size: 24px;
   font-weight: normal;
   text-align: left;
-  color: #001f3f;
+  color: var(--navy);
   margin: 5px 0 0px 0;
   padding: 0;
 }
@@ -72,18 +78,18 @@ SILVER #DDDDDD
   display: block;
   width: 100px;
   background: #fff;
-  border: 1px solid #001f3f;
+  border: 1px solid var(--navy);
   border-radius: 4px;
 }
 
 .journal-login:hover {
-  background: #0074d9;
+  background: var(--blue);
   color: #fff;
   cursor: pointer;
 }
 
 .journal-subheader {
-  color: #001f3f;
+  color: var(--navy);
   font-weight: normal;
   margin: 0;
   padding: 0;
@@ -98,7 +104,7 @@ SILVER #DDDDDD
   position: absolute;
   top: 0;
   right: 0;
-  background: #001f3f;
+  background: var(--navy);
   color: #fff;
   padding: 30px;
   border-radius: 3px;
@@ -110,7 +116,7 @@ SILVER #DDDDDD
 }
 
 .post-wrapper {
-  border-bottom: 1px solid #001f3f;
+  border-bottom: 1px solid var(--navy);
   padding: 10px;
 }
 
@@ -196,4 +202,33 @@ SILVER #DDDDDD
     transform: scaleY(1);
     -webkit-transform: scaleY(1);
   }
+}
+
+.post {
+  padding: 10px;
+  background: var(--teal);
+  margin-bottom: 15px;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.68);
+
+  cursor: pointer;
+}
+
+.post:hover {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.68);
+}
+
+.post a {
+  display: block;
+  font-weight: bold;
+}
+
+.post a:link,
+.post a:visited {
+  color: #111;
+}
+
+.journal-app ul {
+  list-style: none;
+  margin: 10px 0;
+  padding: 0;
 }

@@ -23,7 +23,7 @@ const JournalHeader = props => {
 const JournalApp = () => {
   const [name, setName] = useState('')
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader name={name} />
     </div>
   )

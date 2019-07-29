@@ -25,7 +25,7 @@ const JournalHeader = () => {
 
 const JournalApp = () => {
   return (
-    <div>
+    <div className="journal-app">
       <JournalHeader />
     </div>
   )
