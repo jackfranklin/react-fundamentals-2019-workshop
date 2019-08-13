@@ -31,7 +31,6 @@ const Modal = props => {
           right: 0;
           background: rgba(0, 0, 0, 0.2);
         `}
-        onClick={() => props.onClose()}
       >
         <div
           className={css`
