@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { database } from './firebase'
+import PropTypes from 'prop-types'
 import { css } from 'emotion'
 
-const NewItemForm = () => {
+const NewItemForm = props => {
   const [title, setTitle] = useState('')
   const [time, setTime] = useState('')
 
@@ -25,12 +26,15 @@ const NewItemForm = () => {
     const newItem = {
       title,
       time: parseInt(time, 10),
+      date: Date.now(),
     }
 
     itemsRef.push(newItem)
 
     setTitle('')
     setTime('')
+
+    props.onSuccess && props.onSuccess()
   }
 
   return (
@@ -58,6 +62,10 @@ const NewItemForm = () => {
       <input type="submit" value="Save" />
     </form>
   )
+}
+
+NewItemForm.propTypes = {
+  onSuccess: PropTypes.func,
 }
 
 export default NewItemForm

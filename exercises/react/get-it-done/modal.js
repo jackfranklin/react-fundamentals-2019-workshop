@@ -31,32 +31,37 @@ const Modal = props => {
           right: 0;
           background: rgba(0, 0, 0, 0.2);
         `}
-      />
-
-      <div
-        className={css`
-          background: white;
-          position: relative;
-          z-index: 2;
-          padding: 32px;
-        `}
+        onClick={() => props.onClose()}
       >
         <div
           className={css`
-            width: 100%;
-            display: flex;
-            justify-content: flex-end;
-            border-bottom: 1px solid #ccc;
-            padding-bottom: 6px;
-            margin-bottom: 6px;
+            background: white;
+            position: relative;
+            z-index: 2;
+            padding: 32px;
+            width: 90%;
+            max-width: 700px;
+            margin: 20px auto;
+            border-radius: 4px;
           `}
         >
-          <span onClick={props.onClose}>
-            <FaWindowClose />
-          </span>
-        </div>
+          <div
+            className={css`
+              width: 100%;
+              display: flex;
+              justify-content: flex-end;
+              border-bottom: 1px solid #ccc;
+              padding-bottom: 6px;
+              margin-bottom: 6px;
+            `}
+          >
+            <span onClick={props.onClose}>
+              <FaWindowClose />
+            </span>
+          </div>
 
-        {props.children}
+          {props.children}
+        </div>
       </div>
     </div>
   )
