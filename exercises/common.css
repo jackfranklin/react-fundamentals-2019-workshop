@@ -180,10 +180,6 @@ colours from https://clrs.cc/
   border: 1px solid #111;
 }
 
-.post-wrapper .post-contents {
-  font-style: italic;
-}
-
 .spinner {
   margin: 100px auto;
   width: 50px;
@@ -267,6 +263,11 @@ colours from https://clrs.cc/
 .post a:link,
 .post a:visited {
   color: #111;
+}
+
+.post .post-contents {
+  font-style: italic;
+  padding: 10px;
 }
 
 .journal-app ul {
