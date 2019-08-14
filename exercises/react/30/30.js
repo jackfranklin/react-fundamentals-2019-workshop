@@ -101,10 +101,11 @@ const JournalApp = () => {
         </a>
       </span>
 
-      <span className="toggle-wrapper">
-        Only published posts?{' '}
-        <Toggle onChange={setPublishedOnly} on={publishedOnly} />
-      </span>
+      {state.loggedInUser && (
+        <span className="toggle-wrapper">
+          Only published posts? <Toggle onToggleChange={setPublishedOnly} />
+        </span>
+      )}
 
       {state.postsForUser ? (
         <ul>

@@ -15,7 +15,7 @@ const Post = props => {
       </a>
       <span>
         Posted on {props.post.date} | Published{' '}
-        {props.post.published ? 'Yes' : 'No'}
+        {props.post.published ? '✅' : '❌'}
       </span>
       {expanded && <div className="post-contents">{props.post.body}</div>}
     </div>
