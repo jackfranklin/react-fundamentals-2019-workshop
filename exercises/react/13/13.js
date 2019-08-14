@@ -5,7 +5,7 @@ import Spinner from '../../spinner'
 
 const Post = props => {
   return (
-    <div className="post" className="post">
+    <div className="post">
       <a href="">{props.post.title}</a>
       <span>Posted on {props.post.date}</span>
     </div>
@@ -44,7 +44,7 @@ const JournalApp = () => {
       <JournalHeader name={name} setName={setName} />
 
       {/* TODO: update this so we check if posts === null
-and if it is, we render the <Spinner /> component (which is already imported for you) */}
+        and if it is, we render the <Spinner /> component (which is already imported for you) */}
       <ul>
         {posts.map(post => {
           return (

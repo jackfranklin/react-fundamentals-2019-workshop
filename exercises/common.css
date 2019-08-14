@@ -53,6 +53,7 @@ colours from https://clrs.cc/
   --black: #111111;
   --gray: #aaaaaa;
   --silver: #dddddd;
+  --white: #fff;
 }
 
 .journal-header-wrapper {
@@ -76,16 +77,26 @@ colours from https://clrs.cc/
   right: 5px;
   top: 5px;
   display: block;
-  width: 100px;
+  width: 150px;
   background: #fff;
-  border: 1px solid var(--navy);
-  border-radius: 4px;
+  padding: 10px;
+  background: var(--aqua);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.68);
+}
+.journal-login:hover {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.68);
 }
 
-.journal-login:hover {
-  background: var(--blue);
-  color: #fff;
+.journal-login-modal span {
+  font-size: 12px;
+  display: block;
+  text-align: right;
+}
+
+.journal-login-modal span:hover {
   cursor: pointer;
+  text-decoration: underline;
 }
 
 .journal-subheader {
@@ -97,17 +108,48 @@ colours from https://clrs.cc/
 
 #react-root ul {
   margin: 10px 0;
-  padding-left: 20px;
+  padding: 0;
 }
 
 .journal-login-modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
-  background: var(--navy);
-  color: #fff;
-  padding: 30px;
-  border-radius: 3px;
+  left: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.journal-login-modal-contents {
+  z-index: 10;
+  position: fixed;
+  top: 50px;
+  left: 50%;
+  max-width: 100%;
+  width: 400px;
+  height: 300px;
+  transform: translate(-50%, 0);
+  border-radius: 10px;
+
+  padding: 20px;
+  background: var(--white);
+}
+
+.journal-login-modal-contents input {
+  display: block;
+  width: 100%;
+  margin: 15px 0;
+  padding: 10px;
+}
+
+.journal-login-modal-contents input[type='submit'] {
+  padding: 15px;
+  background: var(--teal);
+  cursor: pointer;
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.68);
+}
+
+.journal-login-modal-contents input[type='submit']:hover {
+  box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.68);
 }
 
 .active-link {

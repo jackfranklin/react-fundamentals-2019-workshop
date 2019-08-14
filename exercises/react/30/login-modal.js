@@ -19,18 +19,20 @@ const LoginModal = props => {
   return (
     props.isShowing && (
       <div className="journal-login-modal">
-        <span onClick={props.onClose}>Cancel</span>
-        <form onSubmit={onSubmit}>
-          <p>Login to your Journal.</p>
-          <input
-            type="text"
-            ref={inputEl}
-            value={loginName}
-            placeholder="jack"
-            onChange={e => setLoginName(e.target.value)}
-          />
-          <input type="submit" value="Login" />
-        </form>
+        <div className="journal-login-modal-contents">
+          <span onClick={props.onClose}>Cancel</span>
+          <form onSubmit={onSubmit}>
+            <p>Login to your Journal.</p>
+            <input
+              type="text"
+              ref={inputEl}
+              value={loginName}
+              placeholder="jack"
+              onChange={e => setLoginName(e.target.value)}
+            />
+            <input type="submit" value="Login" />
+          </form>
+        </div>
       </div>
     )
   )

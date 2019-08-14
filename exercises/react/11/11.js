@@ -27,7 +27,11 @@ const JournalApp = () => {
       <ul>
         {/* TODO: can you create a <Post /> component that gets given a post as a prop and renders it onto the page? */}
         {posts.map(post => {
-          return <li key={post.id}>{post.title}</li>
+          return (
+            <li key={post.id} class="post">
+              {post.title}
+            </li>
+          )
         })}
       </ul>
     </div>

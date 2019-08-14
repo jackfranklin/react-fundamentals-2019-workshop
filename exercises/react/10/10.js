@@ -25,7 +25,12 @@ const JournalApp = () => {
     <div className="journal-app">
       <JournalHeader name={name} setName={setName} />
 
-      <ul>{/* TODO: can you list the posts here, by mapping over them? */}</ul>
+      <ul>
+        {/*
+      TODO: can you list the posts here, by mapping over them?
+      give each <li> a class of "post" to make them look nicer
+        */}
+      </ul>
     </div>
   )
 }

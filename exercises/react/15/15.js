@@ -39,17 +39,19 @@ const JournalHeader = props => {
 
       {isShowingModal && (
         <div className="journal-login-modal">
-          <span onClick={() => setIsShowingModal(false)}>Cancel</span>
-          <form onSubmit={onLoginSubmit}>
-            <p>Login to your Journal.</p>
-            <input
-              type="text"
-              value={loginName}
-              placeholder="jack"
-              onChange={onLoginInputChange}
-            />
-            <input type="submit" value="Login" />
-          </form>
+          <div className="journal-login-modal-contents">
+            <span onClick={() => setIsShowingModal(false)}>Cancel</span>
+            <form onSubmit={onLoginSubmit}>
+              <p>Login to your Journal.</p>
+              <input
+                type="text"
+                value={loginName}
+                placeholder="jack"
+                onChange={onLoginInputChange}
+              />
+              <input type="submit" value="Login" />
+            </form>
+          </div>
         </div>
       )}
     </div>
