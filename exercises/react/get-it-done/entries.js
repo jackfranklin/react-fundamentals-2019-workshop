@@ -32,25 +32,20 @@ const Entries = () => {
         className={css`
           list-style: none;
           padding: 0 !important;
-          display: flex;
-          flex-wrap: wrap;
+          display: grid;
+          grid-template-columns: 1fr 1fr 1fr 1fr;
+          grid-gap: 10px;
           margin: 20px 0 0 0 !important;
         `}
       >
         {entries.map(entry => (
           <li
             className={css`
-              width: calc(25% - 5px);
               box-sizing: border-box;
               padding: 10px;
-              margin-right: 5px;
               border: 1px solid #ddd;
               height: 150px;
               margin-bottom: 10px;
-
-              &:nth-of-type(n + 4) {
-                margin-right: 0;
-              }
             `}
             key={entry.id}
           >
