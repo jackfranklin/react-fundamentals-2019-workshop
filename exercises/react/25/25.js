@@ -73,18 +73,16 @@ const JournalApp = () => {
       <button onClick={stopCounting}>Stop counting</button>
       <AuthContext.Provider value={authContextValue}>
         <JournalHeader />
-        <span>
-          Log in as:{' '}
+        <span className="log-in-shortcut">
+          Log in as{' '}
           <a href="" onClick={logInAs('alice')}>
             Alice
-          </a>{' '}
-          |{' '}
+          </a>
+        </span>
+        <span className="log-in-shortcut">
+          Log in as{' '}
           <a href="" onClick={logInAs('bob')}>
             Bob
-          </a>{' '}
-          |{' '}
-          <a href="" onClick={logInAs('charlotte')}>
-            Charlote
           </a>
         </span>
 

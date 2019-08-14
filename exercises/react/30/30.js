@@ -82,18 +82,22 @@ const JournalApp = () => {
   return (
     <div className="journal-app">
       <JournalHeader loggedInUser={state.loggedInUser} dispatch={dispatch} />
-      <span>
-        Log in as:{' '}
+      <span className="log-in-shortcut">
+        Log in as{' '}
         <a href="" onClick={logInAs('alice')}>
           Alice
-        </a>{' '}
-        |{' '}
+        </a>
+      </span>
+      <span className="log-in-shortcut">
+        Log in as{' '}
         <a href="" onClick={logInAs('bob')}>
           Bob
-        </a>{' '}
-        |{' '}
+        </a>
+      </span>
+      <span className="log-in-shortcut">
+        Log in as{' '}
         <a href="" onClick={logInAs('charlotte')}>
-          Charlote
+          Charlotte
         </a>
       </span>
 

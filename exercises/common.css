@@ -275,3 +275,22 @@ colours from https://clrs.cc/
   margin: 10px 0;
   padding: 0;
 }
+
+.log-in-shortcut {
+  display: inline-block;
+  padding: 0px 5px;
+  background: var(--teal);
+  box-shadow: 2px 2px 0px 0px rgba(0, 0, 0, 0.68);
+  margin-right: 10px;
+}
+
+.log-in-shortcut:last-of-type {
+  margin-right: 0;
+}
+
+.log-in-shortcut a:link,
+.log-in-shortcut a:visited {
+  color: black;
+  text-decoration: underline;
+  font-weight: bold;
+}

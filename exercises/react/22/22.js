@@ -39,16 +39,22 @@ const JournalApp = () => {
     <div>
       <AuthContext.Provider value={authContextValue}>
         <JournalHeader />
-        <span>
+        <span className="log-in-shortcut">
           Log in as{' '}
           <a href="" onClick={logInAs('alice')}>
             Alice
           </a>
         </span>
-        <span>
+        <span className="log-in-shortcut">
           Log in as{' '}
           <a href="" onClick={logInAs('bob')}>
             Bob
+          </a>
+        </span>
+        <span className="log-in-shortcut">
+          Log in as{' '}
+          <a href="" onClick={logInAs('charlotte')}>
+            Charlotte
           </a>
         </span>
 
