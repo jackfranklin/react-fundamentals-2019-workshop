@@ -61,7 +61,8 @@ const JournalApp = () => {
 
         {authContextValue.loggedInUserName && (
           <span className="toggle-wrapper">
-            Only published posts? <Toggle onToggleChange={setPublishedOnly} />
+            Only published posts?{' '}
+            <Toggle onChange={setPublishedOnly} on={publishedOnly} />
           </span>
         )}
 
