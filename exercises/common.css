@@ -109,6 +109,7 @@ colours from https://clrs.cc/
 #react-root ul {
   margin: 10px 0;
   padding: 0;
+  list-style: none;
 }
 
 .journal-login-modal {
@@ -293,4 +294,82 @@ colours from https://clrs.cc/
   color: black;
   text-decoration: underline;
   font-weight: bold;
+}
+
+/*
+toggle styles copied and modified from
+https://codepen.io/mallendeo/pen/eLIiG
+by Mauricio Allende (https://mallendeo.com/)
+*/
+
+.toggle {
+  display: none !important;
+  box-sizing: border-box;
+}
+
+.toggle:before,
+.toggle:after {
+  box-sizing: border-box;
+}
+
+.toggleButton::selection {
+  background: none;
+}
+
+.toggleButton {
+  box-sizing: border-box;
+  outline: 0;
+  margin: 0;
+  display: block;
+  width: 40px;
+  height: 24px;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  background: var(--silver);
+  border-radius: 16px;
+  padding: 2px;
+  transition: all 0.4s ease;
+}
+
+.toggleButton::after,
+.toggleButton::before {
+  position: relative;
+  display: block;
+  content: '';
+  width: 20px;
+  height: 20px;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1),
+    0 3px 1px 0 rgba(0, 0, 0, 0.05);
+  border-radius: solid 1px var(--black);
+}
+
+.toggleButton:after {
+  left: 0;
+  border-radius: 50%;
+  background: var(--white);
+  transition: all 0.2s ease;
+}
+
+.toggleButton:before {
+  display: none;
+}
+
+.toggle:checked + .toggleButton {
+  background: var(--navy);
+}
+
+.toggle:checked + .toggleButton:after {
+  left: 16px;
+}
+
+.toggle-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  padding: 5px 0;
+}
+
+.toggle-wrapper .toggleButton {
+  margin-left: 10px;
 }

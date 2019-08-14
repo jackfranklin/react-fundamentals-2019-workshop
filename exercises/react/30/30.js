@@ -101,7 +101,7 @@ const JournalApp = () => {
         </a>
       </span>
 
-      <span className="toggle">
+      <span className="toggle-wrapper">
         Only published posts?{' '}
         <Toggle onChange={setPublishedOnly} on={publishedOnly} />
       </span>

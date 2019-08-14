@@ -8,7 +8,20 @@ const Toggle = props => {
     props.onToggleChange(on)
   }, [on, props])
 
-  return <span onClick={() => setOn(o => !o)}>{on ? 'YES' : 'NO'}</span>
+  return (
+    <div>
+      <input
+        className="toggle"
+        id="toggle"
+        type="checkbox"
+        checked={on}
+        onChange={event => {
+          setOn(o => !o)
+        }}
+      />
+      <label className="toggleButton" htmlFor="toggle" />
+    </div>
+  )
 }
 
 export default Toggle

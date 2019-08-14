@@ -59,10 +59,12 @@ const JournalApp = () => {
           </a>
         </span>
 
-        <span className="toggle">
-          {/* TODO: turn the Toggle component into a controlled component so it has no state of its own*/}
-          Only published posts? <Toggle onToggleChange={setPublishedOnly} />
-        </span>
+        {authContextValue.loggedInUserName && (
+          <span className="toggle-wrapper">
+            {/* TODO: turn the Toggle component into a controlled component so it has no state of its own*/}
+            Only published posts? <Toggle onToggleChange={setPublishedOnly} />
+          </span>
+        )}
 
         {posts ? (
           <ul>

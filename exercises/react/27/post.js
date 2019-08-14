@@ -9,7 +9,7 @@ const Post = props => {
   }
 
   return (
-    <div className="post-wrapper">
+    <div className="post">
       <a href="" onClick={onClickTitle}>
         {props.post.title}
       </a>
