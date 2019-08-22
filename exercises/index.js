@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import PropTypes from 'prop-types'
+import { css } from 'emotion'
 import { reactExercises } from './all-exercises'
 
 const Index = props => {
@@ -14,22 +14,39 @@ const Index = props => {
           render={() => {
             return (
               <div>
-                <h5>Pick an exercise:</h5>
-                {Object.keys(reactExercises)
-                  .map(k => {
-                    return parseInt(
-                      k.replace('./react/', '').replace('/index.js', ''),
-                      10
-                    )
-                  })
-                  .sort((a, b) => a - b)
-                  .map(path => {
-                    return (
-                      <a href={`/react/${path}`} key={path}>
-                        {path}
-                      </a>
-                    )
-                  })}
+                <h5>React Exercises:</h5>
+                <ul
+                  className={css`
+                    list-style: none;
+                    display: flex;
+                    flex-wrap: wrap;
+                  `}
+                >
+                  {Object.keys(reactExercises)
+                    .map(k => {
+                      return parseInt(
+                        k.replace('./react/', '').replace('/index.js', ''),
+                        10
+                      )
+                    })
+                    .sort((a, b) => a - b)
+                    .map(path => {
+                      return (
+                        <li
+                          key={path}
+                          className={css`
+                            display: block;
+                            padding: 6px;
+                            margin: 5px;
+                            border-radius: 2px;
+                            border: 1px solid blue;
+                          `}
+                        >
+                          <a href={`/react/${path}`}>{path}</a>
+                        </li>
+                      )
+                    })}
+                </ul>
               </div>
             )
           }}
@@ -43,7 +60,6 @@ const Index = props => {
               exact={true}
               render={() => {
                 const Comp = reactExercises[exercise].default
-                console.log('rendering', Comp)
                 return <Comp />
               }}
             />
