@@ -77,7 +77,7 @@ const jsonServerPath = path
 const bundler = new Bundler(indexFile)
 exec(`${babelNodePath} exercises/api/write-posts.js`, () => {
   console.log('✅ Ensured dummy database is updated')
-  exec(`${jsonServerPath} --watch exercises/api/db.json --port 1111`, err => {
+  exec(`${jsonServerPath} --watch exercises/api/db.json`, err => {
     console.log('ERROR', err)
   })
   console.log('✅ Running demo API on localhost:3000')
