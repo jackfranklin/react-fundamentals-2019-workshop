@@ -20,10 +20,39 @@ const glob = require('glob')
 //   })
 // })
 
-glob('exercises/*/*/index.html', (err, files) => {
+glob('exercises/react/*/index.js', (err, files) => {
   files.forEach(file => {
-    fs.unlink(file, err => {
-      if (err) throw err
-    })
+    const contents = fs.readFileSync(file, { encoding: 'utf8' })
+
+    const regex = /ReactDOM\.render\(([\S\n\r\s<]+),\s+document.getElementById\('react-root'\)/m
+
+    const result = regex.exec(contents)
+    if (result && result[1]) {
+      const thingThatIsRendered = result[1]
+
+      const newRender = `const Render = () => ${thingThatIsRendered}; export default Render`
+
+      const newContents = contents.replace(result[0], newRender)
+    } else {
+      console.log('no match', file)
+    }
   })
 })
+
+// glob('exercises/*/*/*.js', (err, files) => {
+//   files.forEach(file => {
+//     console.log('file', file)
+
+//     const base = path.basename(file)
+
+//     const regex = /[0-9]+/
+
+//     if (regex.test(base)) {
+//       fs.rename(file, path.join(path.dirname(file), 'index.js'), err => {
+//         if (err) {
+//           throw err
+//         }
+//       })
+//     }
+//   })
+// })

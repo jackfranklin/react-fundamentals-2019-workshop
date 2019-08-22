@@ -8,8 +8,9 @@ const JournalApp = () => {
   return React.createElement('h1', null, 'Hello World')
 }
 
-ReactDOM.render(
+const Render = () => {
   // TODO: update this line to use JSX also.
-  React.createElement(JournalApp),
-  document.getElementById('react-root')
-)
+  return React.createElement(JournalApp)
+}
+
+export default Render

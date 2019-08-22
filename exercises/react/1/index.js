@@ -7,7 +7,8 @@ const JournalApp = () => {
   return React.createElement('h1', null, 'Hello World')
 }
 
-ReactDOM.render(
-  React.createElement(JournalApp),
-  document.getElementById('react-root')
-)
+const Render = () => {
+  return React.createElement(JournalApp)
+}
+
+export default Render
