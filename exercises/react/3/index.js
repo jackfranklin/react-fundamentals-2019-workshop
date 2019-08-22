@@ -13,7 +13,5 @@ const JournalApp = () => {
   )
 }
 
-ReactDOM.render(
-  <JournalApp name="Jack" />,
-  document.getElementById('react-root')
-)
+const Render = () => <JournalApp name="Jack" />
+export default Render

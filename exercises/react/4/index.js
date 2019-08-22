@@ -19,11 +19,11 @@ const bunchOfProps = {
 }
 
 // TODO: use the spread operator to pass through all the object keys as prop
-ReactDOM.render(
+const Render = () => (
   <JournalApp
     name={bunchOfProps.name}
     age={bunchOfProps.age}
     location={bunchOfProps.location}
-  />,
-  document.getElementById('react-root')
+  />
 )
+export default Render

@@ -84,9 +84,9 @@ const JournalApp = () => {
   )
 }
 
-ReactDOM.render(
+const Render = () => (
   <AuthProvider>
     <JournalApp />
-  </AuthProvider>,
-  document.getElementById('react-root')
+  </AuthProvider>
 )
+export default Render

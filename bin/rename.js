@@ -24,7 +24,7 @@ glob('exercises/react/*/index.js', (err, files) => {
   files.forEach(file => {
     const contents = fs.readFileSync(file, { encoding: 'utf8' })
 
-    const regex = /ReactDOM\.render\(([\S\n\r\s<]+),\s+document.getElementById\('react-root'\)/m
+    const regex = /ReactDOM\.render\(([\S\n\r\s<]+),\s+document.getElementById\('react-root'\)\s?\)/m
 
     const result = regex.exec(contents)
     if (result && result[1]) {
@@ -33,6 +33,7 @@ glob('exercises/react/*/index.js', (err, files) => {
       const newRender = `const Render = () => ${thingThatIsRendered}; export default Render`
 
       const newContents = contents.replace(result[0], newRender)
+      fs.writeFileSync(file, newContents, { encoding: 'utf8' })
     } else {
       console.log('no match', file)
     }

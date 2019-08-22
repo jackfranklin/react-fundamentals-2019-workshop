@@ -23,7 +23,5 @@ const bunchOfProps = {
   location: 'London',
 }
 
-ReactDOM.render(
-  <JournalApp {...bunchOfProps} />,
-  document.getElementById('react-root')
-)
+const Render = () => <JournalApp {...bunchOfProps} />
+export default Render

@@ -86,4 +86,5 @@ const JournalApp = () => {
 
 const JournalWithAuth = wrapWithAuth(JournalApp)
 
-ReactDOM.render(<JournalWithAuth />, document.getElementById('react-root'))
+const Render = () => <JournalWithAuth />
+export default Render
