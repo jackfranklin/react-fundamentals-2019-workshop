@@ -11,7 +11,8 @@
   "private": true,
   "scripts": {
     "exercise": "cross-env NODE_ENV=development node bin/run-exercise.js",
-    "prettier:write": "prettier --write 'exercises/**/*.js'"
+    "prettier:write": "prettier --write 'exercises/**/*.js'",
+    "prettier:check": "prettier --list-different 'exercises/**/*.js'"
   },
   "dependencies": {
     "@babel/core": "^7.4.3",
@@ -35,6 +36,7 @@
     "eslint-plugin-react-hooks": "^1.6.0",
     "expect": "^24.8.0",
     "faker": "^4.1.0",
+    "firebase": "^6.4.0",
     "frontend": "^2.0.0-alpha.4",
     "graphql-request": "^1.8.2",
     "json-server": "^0.14.2",

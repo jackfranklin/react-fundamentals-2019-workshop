@@ -1,3 +1,5 @@
+import * as firebase from 'firebase'
+
 const firebaseConfig = {
   apiKey: 'AIzaSyD8DCM13v0utLYOcUesjRhKPEJptbFH5NA',
   authDomain: 'getitdone-d3bb4.firebaseapp.com',
@@ -8,8 +10,8 @@ const firebaseConfig = {
   appId: '1:766015282014:web:9aebaaf06bef6806',
 }
 
-window.firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(firebaseConfig)
 
-const database = window.firebase.database()
+const database = firebase.database()
 
 export { database }
