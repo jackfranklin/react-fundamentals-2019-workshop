@@ -66,24 +66,20 @@ const indexFile = generateIndexFile(folderName, exerciseNumber)
 
 console.log('Exercise running:', chalk.blue(indexFile))
 
-const babelNodePath = path.join(
-  process.cwd(),
-  'node_modules',
-  '.bin',
-  'babel-node'
-)
+const babelNodePath = path
+  .join(process.cwd(), 'node_modules', '.bin', 'babel-node')
+  .replace(/(\s+)/g, '\\$1')
 
-const jsonServerPath = path.join(
-  process.cwd(),
-  'node_modules',
-  '.bin',
-  'json-server'
-)
+const jsonServerPath = path
+  .join(process.cwd(), 'node_modules', '.bin', 'json-server')
+  .replace(/(\s+)/g, '\\$1')
 
 const bundler = new Bundler(indexFile)
 exec(`${babelNodePath} exercises/api/write-posts.js`, () => {
   console.log('✅ Ensured dummy database is updated')
-  exec(`${jsonServerPath} --watch exercises/api/db.json`)
+  exec(`${jsonServerPath} --watch exercises/api/db.json --port 1111`, err => {
+    console.log('ERROR', err)
+  })
   console.log('✅ Running demo API on localhost:3000')
   bundler.serve(1234)
 })
