@@ -10,10 +10,8 @@ body {
   background: #ddd;
 }
 body > h1 {
-  border-bottom: 1px solid #111;
-  margin-bottom: 30px;
   text-align: center;
-  padding: 10px;
+  margin-top: 10px;
 }
 
 code {
@@ -25,8 +23,7 @@ code {
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   max-width: 900px;
   width: 90%;
-  margin: 10px auto;
-  padding: 10px;
+  margin: 0 auto;
 }
 
 #exercise-container {

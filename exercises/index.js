@@ -13,7 +13,6 @@ const Index = props => {
         render={() => {
           return (
             <div>
-              <h5>React Exercises:</h5>
               <ul
                 className={css`
                   list-style: none;
