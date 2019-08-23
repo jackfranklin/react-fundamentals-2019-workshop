@@ -27,7 +27,7 @@ Promise.all([
 ]).then(([parcelPort, apiPort]) => {
   const apiPortModule = `export default ${apiPort}`
   fs.writeFileSync(
-    path.join(process.cwd(), 'exercises', 'api-port.js'),
+    path.join(process.cwd(), 'exercises', 'api-port'),
     apiPortModule,
     { encoding: 'utf8' }
   )

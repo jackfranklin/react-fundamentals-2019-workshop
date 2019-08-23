@@ -1,3 +1,4 @@
+import apiPort from '../api-port'
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useMemo } from 'react'
 import fetch from 'so-fetch-js'
@@ -30,9 +31,11 @@ const JournalApp = () => {
 
     if (!userId) return
 
-    fetch(`http://localhost:3000/posts?userId=${userId}`).then(response => {
-      setPosts(response.data)
-    })
+    fetch(`http://localhost${apiPort}/posts?userId=${userId}`).then(
+      response => {
+        setPosts(response.data)
+      }
+    )
   }, [authContextValue.loggedInUserName])
 
   return (

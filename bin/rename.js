@@ -20,22 +20,18 @@ const glob = require('glob')
 //   })
 // })
 
-glob('exercises/react/*/index.js', (err, files) => {
+glob('exercises/react/*/*.js', (err, files) => {
   files.forEach(file => {
     const contents = fs.readFileSync(file, { encoding: 'utf8' })
 
-    const regex = /ReactDOM\.render\(([\S\n\r\s<]+),\s+document.getElementById\('react-root'\)\s?\)/m
+    const regex = /apiPort/
 
     const result = regex.exec(contents)
-    if (result && result[1]) {
-      const thingThatIsRendered = result[1]
 
-      const newRender = `const Render = () => ${thingThatIsRendered}; export default Render`
-
-      const newContents = contents.replace(result[0], newRender)
+    if (result) {
+      const newContents = `import apiPort from '../api-port'; ${contents}`
       fs.writeFileSync(file, newContents, { encoding: 'utf8' })
-    } else {
-      console.log('no match', file)
+      console.log('Updated file', file)
     }
   })
 })

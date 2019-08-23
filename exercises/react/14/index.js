@@ -1,3 +1,4 @@
+import apiPort from '../api-port'
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
 import fetch from 'so-fetch-js'
@@ -64,7 +65,7 @@ const JournalApp = () => {
   const [posts, setPosts] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3000/posts').then(response => {
+    fetch(`http://localhost:${apiPort}/posts`).then(response => {
       setPosts(response.data)
     })
   }, [])
