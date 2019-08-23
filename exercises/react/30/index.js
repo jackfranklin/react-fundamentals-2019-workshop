@@ -1,4 +1,4 @@
-import apiPort from '../api-port'
+import apiPort from '../../api-port'
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useReducer } from 'react'
 import Spinner from '../../spinner'
@@ -54,7 +54,7 @@ const JournalApp = () => {
     const userId = userIdForName(state.loggedInUser.name)
     if (!userId) return
 
-    fetch(`http://localhost${apiPort}/posts?userId=${userId}`).then(
+    fetch(`http://localhost:${apiPort}/posts?userId=${userId}`).then(
       response => {
         dispatch({
           type: 'gotPostsForUser',

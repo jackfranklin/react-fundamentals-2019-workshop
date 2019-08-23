@@ -5,8 +5,6 @@ const fs = require('fs')
 const getPort = require('get-port')
 const { exec } = require('child_process')
 
-const { argv } = require('yargs')
-
 console.log('🎉', chalk.green('Loading React fundamentals workshop...'))
 
 const babelNodePath = path
@@ -25,9 +23,12 @@ Promise.all([
   getPort({ port: getPort.makeRange(1100, 1300) }),
   getPort({ port: getPort.makeRange(3000, 3100) }),
 ]).then(([parcelPort, apiPort]) => {
+  console.log(chalk.green('Found ports!'))
+  console.log('-->', 'The frontend is running on port', chalk.bold(parcelPort))
+  console.log('-->', 'The API is running on port', chalk.bold(apiPort))
   const apiPortModule = `export default ${apiPort}`
   fs.writeFileSync(
-    path.join(process.cwd(), 'exercises', 'api-port'),
+    path.join(process.cwd(), 'exercises', 'api-port.js'),
     apiPortModule,
     { encoding: 'utf8' }
   )

@@ -1,4 +1,4 @@
-import apiPort from '../api-port'
+import apiPort from '../../api-port'
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
 import fetch from 'so-fetch-js'
@@ -68,7 +68,7 @@ const JournalApp = () => {
 
     if (!userId) return
 
-    fetch(`http://localhost${apiPort}/posts?userId=${userId}`).then(
+    fetch(`http://localhost:${apiPort}/posts?userId=${userId}`).then(
       response => {
         setPosts(response.data)
       }

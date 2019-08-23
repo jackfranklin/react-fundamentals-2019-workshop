@@ -1,4 +1,4 @@
-import apiPort from '../api-port'
+import apiPort from '../../api-port'
 import ReactDOM from 'react-dom'
 import React, { useState, useEffect } from 'react'
 import fetch from 'so-fetch-js'
@@ -74,7 +74,7 @@ const JournalApp = () => {
   useEffect(() => {
     // TODO: update this useEffect call so it makes a request to fetch posts for a given user Id
     // which you can do with: /posts?userId=1
-    fetch(`http://localhost${apiPort}/posts`).then(response => {
+    fetch(`http://localhost:${apiPort}/posts`).then(response => {
       setPosts(response.data)
     })
   }, [])

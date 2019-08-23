@@ -1,4 +1,4 @@
-import apiPort from '../api-port'
+import apiPort from '../../api-port'
 import { useState, useEffect, useReducer } from 'react'
 import fetch from 'so-fetch-js'
 
@@ -30,7 +30,7 @@ const usePostsLoader = userId => {
     if (postsCache[userId]) {
       return
     } else {
-      fetch(`http://localhost${apiPort}/posts?userId=${userId}`).then(
+      fetch(`http://localhost:${apiPort}/posts?userId=${userId}`).then(
         response => {
           // TODO: dispatch the right action here so the posts
           // get put into the cache

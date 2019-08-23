@@ -23,12 +23,16 @@ code {
 #react-root {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
     Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-
-  padding: 10px;
   max-width: 900px;
   width: 90%;
   margin: 10px auto;
+  padding: 10px;
+}
+
+#exercise-container {
   background: #fff;
+  margin: 20px 0;
+  padding: 10px;
   min-height: 400px;
 }
 
