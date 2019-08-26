@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, NavLink, Redirect } from 'react-router-dom'
 import { css } from 'emotion'
 import { reactExercises } from './all-exercises'
+import todosJSON from './react/todos.json'
+import { FaClipboardCheck } from 'react-icons/fa'
+
+const todosJSONToMap = () => {
+  const withDataAsSets = todosJSON.map(([key, data]) => {
+    return [key, new Set(data)]
+  })
+  return new Map(withDataAsSets)
+}
+
+const todos = todosJSONToMap()
+console.log('todos', todos)
 
 const Index = props => {
   return (
@@ -69,19 +81,70 @@ const Index = props => {
             exact={true}
             render={() => {
               const Comp = reactExercises[exercise].default
+              const exerciseNumber = path.replace('/react/', '')
+              const todosForExercise = Array.from(todos.get(exerciseNumber))
+
+              const hasAnyTodos = todosForExercise.some(todo => {
+                return todo.todos.length > 0
+              })
               return (
-                <div
-                  className={css`
-                    border-top: 1px solid #111;
-                    margin-top: 20px;
-                    padding-top: 20px;
-                  `}
-                >
-                  <h4>Exercise {path.replace('/react/', '')}</h4>
-                  <div id="exercise-container">
-                    <Comp />
+                <Fragment>
+                  <div
+                    className={css`
+                      border-top: 1px solid #111;
+                      margin-top: 20px;
+                      padding-top: 20px;
+                    `}
+                  >
+                    <h4>Exercise {exerciseNumber}</h4>
+                    <div id="exercise-container">
+                      <Comp />
+                    </div>
                   </div>
-                </div>
+                  {hasAnyTodos ? (
+                    <div
+                      className={css`
+                        position: fixed;
+                        bottom: 0;
+                        width: 100%;
+                        left: 0;
+                        padding: 5px 15px;
+                        background: rgba(0, 0, 0, 0.8);
+                        color: #fff;
+                      `}
+                    >
+                      <ul>
+                        {todosForExercise.map(({ filePath, todos }) => {
+                          return todos.length > 0 ? (
+                            <li key={filePath}>
+                              <code>{filePath}</code>
+                              <ul>
+                                {todos.map(todo => {
+                                  return (
+                                    <li
+                                      key={todo}
+                                      className={css`
+                                        display: flex;
+                                        align-items: center;
+                                      `}
+                                    >
+                                      <FaClipboardCheck
+                                        className={css`
+                                          padding-right: 5px;
+                                        `}
+                                      />
+                                      {todo}
+                                    </li>
+                                  )
+                                })}
+                              </ul>
+                            </li>
+                          ) : null
+                        })}
+                      </ul>
+                    </div>
+                  ) : null}
+                </Fragment>
               )
             }}
           />
