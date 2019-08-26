@@ -5,6 +5,7 @@ import fetch from 'so-fetch-js'
 import Spinner from '../../spinner'
 import Post from './post'
 
+// TODO: move the JournalHeader into its own file
 const JournalHeader = props => {
   const [loginName, setLoginName] = useState('')
 
