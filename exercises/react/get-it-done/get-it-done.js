@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
 import { css } from 'emotion'
 import Modal from './modal'
 import NewItemForm from './new-item-form'
