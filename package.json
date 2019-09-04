@@ -10,7 +10,7 @@
   },
   "private": true,
   "scripts": {
-    "exercise": "cross-env NODE_ENV=development node bin/run-exercise.js",
+    "start": "cross-env NODE_ENV=development node bin/run.js",
     "prettier:write": "prettier --write 'exercises/**/*.js'",
     "prettier:check": "prettier --list-different 'exercises/**/*.js'"
   },
@@ -23,6 +23,7 @@
     "@babel/preset-env": "^7.4.3",
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.2",
+    "babel-plugin-macros": "^2.6.1",
     "chalk": "^2.4.2",
     "classnames": "^2.2.6",
     "cross-env": "^5.2.0",
@@ -38,7 +39,10 @@
     "faker": "^4.1.0",
     "firebase": "^6.4.0",
     "frontend": "^2.0.0-alpha.4",
+    "get-port": "^5.0.0",
+    "glob": "^7.1.4",
     "graphql-request": "^1.8.2",
+    "import-all.macro": "^2.0.3",
     "json-server": "^0.15.0",
     "lowdb": "^1.0.0",
     "parcel-bundler": "^1.12.3",

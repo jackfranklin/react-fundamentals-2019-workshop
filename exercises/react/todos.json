@@ -1,0 +1,664 @@
+[
+  [
+    "1",
+    [
+      {
+        "filePath": "exercises/react/1/index.js",
+        "todos": [
+          "can you change the h1 to another element?"
+        ]
+      }
+    ]
+  ],
+  [
+    "10",
+    [
+      {
+        "filePath": "exercises/react/10/index.js",
+        "todos": [
+          "can you list the posts here, by mapping over them?\n      give each <li> a class of \"post\" to make them look nicer"
+        ]
+      },
+      {
+        "filePath": "exercises/react/10/posts.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "11",
+    [
+      {
+        "filePath": "exercises/react/11/index.js",
+        "todos": [
+          "can you create a <Post /> component that gets given a post as a prop and renders it onto the page?"
+        ]
+      },
+      {
+        "filePath": "exercises/react/11/posts.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "12",
+    [
+      {
+        "filePath": "exercises/react/12/index.js",
+        "todos": [
+          "run this code to fetch the posts ensuring that you add the empty"
+        ]
+      }
+    ]
+  ],
+  [
+    "13",
+    [
+      {
+        "filePath": "exercises/react/13/index.js",
+        "todos": [
+          "update this so the default state of posts is `null`",
+          "update this so we check if posts === null\n        and if it is, we render the <Spinner /> component (which is already imported for you)"
+        ]
+      }
+    ]
+  ],
+  [
+    "14",
+    [
+      {
+        "filePath": "exercises/react/14/index.js",
+        "todos": [
+          "set the state of the loginName here",
+          "call props.setName here, passing in the name"
+        ]
+      }
+    ]
+  ],
+  [
+    "15",
+    [
+      {
+        "filePath": "exercises/react/15/index.js",
+        "todos": [
+          "update this useEffect call so it makes a request to fetch posts for a given user Id"
+        ]
+      }
+    ]
+  ],
+  [
+    "16",
+    [
+      {
+        "filePath": "exercises/react/16/index.js",
+        "todos": [
+          "move the JournalHeader into its own file"
+        ]
+      },
+      {
+        "filePath": "exercises/react/16/post.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "17",
+    [
+      {
+        "filePath": "exercises/react/17/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/17/journal-header.js",
+        "todos": [
+          "can you extract the LoginModal compoonent so that this works and you can use this ?"
+        ]
+      },
+      {
+        "filePath": "exercises/react/17/post.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "18",
+    [
+      {
+        "filePath": "exercises/react/18/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/18/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/18/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/18/post.js",
+        "todos": [
+          "update this compoonent so when you click on its title, it shows a <div> with the post's contents inside\n * hint: the post's contents is in props.post.body\n * give the post div the class of \"post-contents\""
+        ]
+      }
+    ]
+  ],
+  [
+    "19",
+    [
+      {
+        "filePath": "exercises/react/19/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/19/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/19/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/19/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/19/post.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "2",
+    [
+      {
+        "filePath": "exercises/react/2/index.js",
+        "todos": [
+          "can you change this to use JSX?",
+          "update this line to use JSX also."
+        ]
+      }
+    ]
+  ],
+  [
+    "20",
+    [
+      {
+        "filePath": "exercises/react/20/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/20/index.js",
+        "todos": [
+          "put the setName function on the AuthContext so that JournalHeader can use that rather than take a prop"
+        ]
+      },
+      {
+        "filePath": "exercises/react/20/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/20/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/20/post.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "21",
+    [
+      {
+        "filePath": "exercises/react/21/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/21/index.js",
+        "todos": [
+          "wrap this in a useMemo call"
+        ]
+      },
+      {
+        "filePath": "exercises/react/21/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/21/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/21/post.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "22",
+    [
+      {
+        "filePath": "exercises/react/22/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/22/index.js",
+        "todos": [
+          "make this work!"
+        ]
+      },
+      {
+        "filePath": "exercises/react/22/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/22/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/22/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/22/use-posts-loader.js",
+        "todos": [
+          "make this work:"
+        ]
+      }
+    ]
+  ],
+  [
+    "23",
+    [
+      {
+        "filePath": "exercises/react/23/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/23/index.js",
+        "todos": [
+          "turn the Toggle component into a controlled component so it has no state of its own"
+        ]
+      },
+      {
+        "filePath": "exercises/react/23/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/23/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/23/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/23/toggle.js",
+        "todos": [
+          "turn the Toggle component into a controlled component"
+        ]
+      },
+      {
+        "filePath": "exercises/react/23/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "24",
+    [
+      {
+        "filePath": "exercises/react/24/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/24/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/24/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/24/login-modal.js",
+        "todos": [
+          "create a new ref called inputEl and have it bound to the <input />\n   * that is rendered below and use useEffect to focus the input automatically\n   * when we show the login modal"
+        ]
+      },
+      {
+        "filePath": "exercises/react/24/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/24/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/24/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "25",
+    [
+      {
+        "filePath": "exercises/react/25/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/25/index.js",
+        "todos": [
+          "store the setInterval timer in the countTimerId reference"
+        ]
+      },
+      {
+        "filePath": "exercises/react/25/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/25/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/25/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/25/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/25/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "26",
+    [
+      {
+        "filePath": "exercises/react/26/auth-context.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/journal-header.js",
+        "todos": [
+          "can you swap this to use our new useAuth hook"
+        ]
+      },
+      {
+        "filePath": "exercises/react/26/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/use-auth.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/26/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "27",
+    [
+      {
+        "filePath": "exercises/react/27/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/use-auth.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/27/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "28",
+    [
+      {
+        "filePath": "exercises/react/28/index.js",
+        "todos": [
+          "update this to not wrap with AuthProvider but to use the wrapWithAuth function"
+        ]
+      },
+      {
+        "filePath": "exercises/react/28/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/28/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/28/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/28/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/28/use-auth.js",
+        "todos": [
+          "can you implement wrapWithAuth"
+        ]
+      },
+      {
+        "filePath": "exercises/react/28/use-posts-loader.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "29",
+    [
+      {
+        "filePath": "exercises/react/29/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/toggle.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/use-auth.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/29/use-posts-loader.js",
+        "todos": [
+          ":\n     * update this code to use our reducer\n     * and GET RID of the postsCache state that we have",
+          "dispatch the right action here so the posts"
+        ]
+      }
+    ]
+  ],
+  [
+    "3",
+    [
+      {
+        "filePath": "exercises/react/3/index.js",
+        "todos": [
+          "can you update this component so it also renders a h2"
+        ]
+      }
+    ]
+  ],
+  [
+    "30",
+    [
+      {
+        "filePath": "exercises/react/30/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/30/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/30/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/30/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/30/toggle.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "4",
+    [
+      {
+        "filePath": "exercises/react/4/index.js",
+        "todos": [
+          "use the spread operator to pass through all the object keys as prop"
+        ]
+      }
+    ]
+  ],
+  [
+    "5",
+    [
+      {
+        "filePath": "exercises/react/5/index.js",
+        "todos": [
+          "define the prop type for the name, age and location prop"
+        ]
+      }
+    ]
+  ],
+  [
+    "6",
+    [
+      {
+        "filePath": "exercises/react/6/index.js",
+        "todos": [
+          "can you create a <JournalHeader> component"
+        ]
+      }
+    ]
+  ],
+  [
+    "7",
+    [
+      {
+        "filePath": "exercises/react/7/index.js",
+        "todos": [
+          "can you get rid of the `name` constant, and instead create some"
+        ]
+      }
+    ]
+  ],
+  [
+    "8",
+    [
+      {
+        "filePath": "exercises/react/8/index.js",
+        "todos": [
+          "can you lift the `name` state up into `JournalApp`"
+        ]
+      }
+    ]
+  ],
+  [
+    "9",
+    [
+      {
+        "filePath": "exercises/react/9/index.js",
+        "todos": [
+          "can you hook up the login button so it works?"
+        ]
+      }
+    ]
+  ],
+  [
+    "get-it-done",
+    [
+      {
+        "filePath": "exercises/react/get-it-done/entries.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/get-it-done/firebase.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/get-it-done/get-it-done.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/get-it-done/modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/get-it-done/new-item-form.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
+    "our-use-state",
+    [
+      {
+        "filePath": "exercises/react/our-use-state/our-use-state-finished.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/our-use-state/our-use-state.js",
+        "todos": [
+          "swap this for our very own useState"
+        ]
+      }
+    ]
+  ]
+]
