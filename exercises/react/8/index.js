@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import React, { useState } from 'react'
 
 // TODO: can you lift the `name` state up into `JournalApp`

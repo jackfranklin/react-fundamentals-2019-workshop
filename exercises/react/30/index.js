@@ -1,5 +1,5 @@
 import apiPort from '../../api-port'
-import ReactDOM from 'react-dom'
+
 import React, { useState, useEffect, useReducer } from 'react'
 import Spinner from '../../spinner'
 import JournalHeader from './journal-header'

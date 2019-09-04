@@ -1,5 +1,5 @@
 import apiPort from '../../api-port'
-import ReactDOM from 'react-dom'
+
 import React, { useState, useEffect, useMemo } from 'react'
 import fetch from 'so-fetch-js'
 import Spinner from '../../spinner'

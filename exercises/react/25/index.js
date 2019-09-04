@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useMemo, useRef } from 'react'
 import fetch from 'so-fetch-js'
 import Spinner from '../../spinner'

@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import React, { useState, useEffect, useMemo } from 'react'
 import Spinner from '../../spinner'
 import JournalHeader from './journal-header'

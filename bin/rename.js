@@ -20,22 +20,30 @@ const glob = require('glob')
 //   })
 // })
 
+// glob('exercises/react/*/*.js', (err, files) => {
+//   files.forEach(file => {
+//     const contents = fs.readFileSync(file, { encoding: 'utf8' })
+
+//     const regex = /apiPort/
+
+//     const result = regex.exec(contents)
+
+//     if (result) {
+//       const newContents = `import apiPort from '../api-port'; ${contents}`
+//       fs.writeFileSync(file, newContents, { encoding: 'utf8' })
+//       console.log('Updated file', file)
+//     }
+//   })
+// })
+
 glob('exercises/react/*/*.js', (err, files) => {
   files.forEach(file => {
     const contents = fs.readFileSync(file, { encoding: 'utf8' })
 
-    const regex = /apiPort/
-
-    const result = regex.exec(contents)
-
-    if (result) {
-      const newContents = `import apiPort from '../api-port'; ${contents}`
-      fs.writeFileSync(file, newContents, { encoding: 'utf8' })
-      console.log('Updated file', file)
-    }
+    const newContents = contents.replace(`import ReactDOM from 'react-dom'`, '')
+    fs.writeFileSync(file, newContents, { encoding: 'utf8' })
   })
 })
-
 // glob('exercises/*/*/*.js', (err, files) => {
 //   files.forEach(file => {
 //     console.log('file', file)

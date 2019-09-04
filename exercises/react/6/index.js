@@ -1,4 +1,3 @@
-import ReactDOM from 'react-dom'
 import React from 'react'
 
 // TODO: can you create a <JournalHeader> component
