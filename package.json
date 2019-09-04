@@ -57,6 +57,6 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-thunk": "^2.3.0",
     "so-fetch-js": "0.4.1",
-    "yargs": "^13.2.2"
+    "yargs": "^14.0.0"
   }
 }
