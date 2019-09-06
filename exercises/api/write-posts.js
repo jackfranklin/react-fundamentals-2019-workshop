@@ -12,6 +12,13 @@ console.log('got existing DB', existingDb)
 
 if (!(existingDb.posts && existingDb.posts.length > 0)) {
   console.log('Writing new posts to fake DB')
+
+  const users = [
+    { id: 1, name: 'alice' },
+    { id: 2, name: 'bob' },
+    { id: 3, name: 'charlotte' },
+  ]
+
   const posts = [
     {
       id: 1,
@@ -100,6 +107,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
     JSON.stringify(
       {
         posts: posts,
+        users: users,
       },
       null,
       4

@@ -14,7 +14,6 @@ const todosJSONToMap = () => {
 }
 
 const todos = todosJSONToMap()
-console.log('todos', todos)
 
 const Index = props => {
   return (

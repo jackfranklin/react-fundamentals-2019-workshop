@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import posts from './posts'
-console.log('posts', posts)
 
 const JournalHeader = props => {
   const login = () => {
