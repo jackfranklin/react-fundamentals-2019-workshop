@@ -71,6 +71,7 @@ const JournalApp = () => {
 
     const userId = userIdForName(username)
 
+    // TODO: extract this function out of the React component
     fetch(`http://localhost:${apiPort}/users/${userId}`, {
       method: 'PUT',
       body: JSON.stringify({

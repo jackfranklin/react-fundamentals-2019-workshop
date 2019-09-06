@@ -560,7 +560,9 @@
     [
       {
         "filePath": "exercises/react/31/index.js",
-        "todos": []
+        "todos": [
+          "extract this function out of the React component"
+        ]
       },
       {
         "filePath": "exercises/react/31/journal-header.js",
