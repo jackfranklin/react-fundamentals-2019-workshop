@@ -11,6 +11,7 @@
   "private": true,
   "scripts": {
     "start": "cross-env NODE_ENV=development node bin/run.js",
+    "todos": "node bin/find-todos.js",
     "prettier:write": "prettier --write 'exercises/**/*.js'",
     "prettier:check": "prettier --list-different 'exercises/**/*.js'"
   },

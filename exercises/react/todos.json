@@ -556,6 +556,31 @@
     ]
   ],
   [
+    "31",
+    [
+      {
+        "filePath": "exercises/react/31/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/31/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/31/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/31/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/31/toggle.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
     "4",
     [
       {
@@ -643,21 +668,6 @@
       {
         "filePath": "exercises/react/get-it-done/new-item-form.js",
         "todos": []
-      }
-    ]
-  ],
-  [
-    "our-use-state",
-    [
-      {
-        "filePath": "exercises/react/our-use-state/our-use-state-finished.js",
-        "todos": []
-      },
-      {
-        "filePath": "exercises/react/our-use-state/our-use-state.js",
-        "todos": [
-          "swap this for our very own useState"
-        ]
       }
     ]
   ]
