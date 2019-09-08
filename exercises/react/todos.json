@@ -583,6 +583,37 @@
     ]
   ],
   [
+    "32",
+    [
+      {
+        "filePath": "exercises/react/32/index.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/32/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/32/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/32/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/32/tags.js",
+        "todos": [
+          "turn tags into a Set and update the rest of the code in this component accordingly"
+        ]
+      },
+      {
+        "filePath": "exercises/react/32/toggle.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
     "4",
     [
       {
