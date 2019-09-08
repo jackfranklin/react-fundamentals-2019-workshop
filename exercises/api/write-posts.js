@@ -27,6 +27,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['journal'],
     },
     {
       id: 2,
@@ -35,6 +36,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['react'],
     },
     {
       id: 3,
@@ -43,6 +45,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['exercise'],
     },
     {
       id: 4,
@@ -51,6 +54,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['journal'],
     },
     {
       id: 5,
@@ -59,6 +63,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['exercise'],
     },
     {
       id: 6,
@@ -67,6 +72,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['tv'],
     },
     {
       id: 7,
@@ -75,6 +81,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['money'],
     },
     {
       id: 8,
@@ -83,6 +90,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['sport'],
     },
     {
       id: 9,
@@ -91,6 +99,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['react'],
     },
     {
       id: 10,
@@ -99,6 +108,7 @@ if (!(existingDb.posts && existingDb.posts.length > 0)) {
       body: faker.lorem.paragraphs(),
       userId: faker.random.number(3),
       published: randomTrueOrFalse(),
+      tags: ['thought-leader'],
     },
   ]
 

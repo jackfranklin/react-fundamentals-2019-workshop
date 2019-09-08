@@ -1,99 +1,128 @@
 {
-  "posts": [
-    {
-      "id": 1,
-      "title": "A day at the beach",
-      "date": "2019-08-22",
-      "body": "Accusantium aperiam adipisci et repellat. Ratione sed et eum dolor autem accusamus consequatur. Voluptatum pariatur sit ut dolores animi porro. Qui sed molestiae earum doloremque et. Quod quam voluptatem iure dolorem. Minus impedit ad eos temporibus vitae.\n \rAtque saepe omnis officia sed. Maiores deleniti atque error inventore saepe ut excepturi. Esse et ipsam veniam accusamus rem ipsum.\n \rLabore et aut sunt numquam. Blanditiis ex culpa unde. Culpa alias magni maiores ut voluptatibus ut. Et provident non. Eveniet eos temporibus aut et doloremque distinctio. Dolores optio tenetur.",
-      "userId": 2,
-      "published": false
-    },
-    {
-      "id": 2,
-      "title": "Attended the React workshop",
-      "date": "2019-08-18",
-      "body": "Quo tempora sit aspernatur vero qui veritatis cumque. Blanditiis ut provident accusamus quia placeat. Vero repellat perferendis rerum quasi. Molestiae magnam incidunt eos eveniet itaque ea consequatur fugit. Ut quos saepe qui natus.\n \rAperiam non reiciendis aut laborum. Molestiae porro dolorem officia eaque libero perspiciatis. Autem corporis qui voluptas id. Aperiam vero consequuntur in. Rerum autem sed et.\n \rPorro magnam aut provident consequatur ipsam. Eaque earum quae. Provident expedita nemo quisquam. Quod et adipisci. Veniam atque enim aliquid qui officia qui quidem molestiae repellat. Voluptates delectus a aut magnam reiciendis et soluta est.",
-      "userId": 2,
-      "published": true
-    },
-    {
-      "id": 3,
-      "title": "Did a 5km run",
-      "date": "2019-07-01",
-      "body": "Dolorem eos amet harum voluptate. Beatae nemo ab voluptatum autem et voluptatem est. Eius autem aut.\n \rArchitecto blanditiis enim totam aliquam aut beatae in possimus. Ut enim voluptas vel. Excepturi cupiditate quaerat et.\n \rEnim eum hic aut. Magni ut nihil sunt ut necessitatibus assumenda sunt alias nulla. Reiciendis tempora velit a aut nisi eum. Id consequatur eligendi voluptas voluptatem odit fuga. Dolor velit sed et odio perspiciatis rerum modi.",
-      "userId": 0,
-      "published": true
-    },
-    {
-      "id": 4,
-      "title": "Birthday dinner for a friend",
-      "date": "2019-08-22",
-      "body": "Eligendi reprehenderit id non. Voluptas esse qui harum qui dolorum distinctio. Quia vero illo deleniti voluptatem. Exercitationem omnis veritatis beatae ut in non est. Aut est tempora nihil optio. Voluptate consequatur in consequatur qui doloribus autem illo ea vel.\n \rNobis et non. In voluptas molestias tempora pariatur est enim rem. Iure nulla adipisci. Distinctio ut qui non consequatur non. Consequatur ratione voluptatem voluptatem et. Omnis reprehenderit nostrum soluta consequuntur non placeat explicabo.\n \rReiciendis atque sint quis qui et ut molestiae accusamus ut. Autem porro ex. Molestiae unde dolore. Consequatur aspernatur aliquam. Neque voluptas provident molestiae voluptate impedit sit et.",
-      "userId": 1,
-      "published": false
-    },
-    {
-      "id": 5,
-      "title": "Played football in the park",
-      "date": "2019-07-03",
-      "body": "Ducimus velit quisquam molestiae facere in odit vel architecto deleniti. Quis adipisci rem. Similique qui incidunt. Aut perferendis delectus. Totam et esse suscipit veritatis eius.\n \rVoluptatem aut et. Aspernatur velit aut molestiae sit possimus delectus. Quod sit id omnis. Voluptas vel provident voluptatum. Eius officia et deleniti alias laudantium cumque qui. Consectetur aut eos.\n \rLibero eum non adipisci dolorum facere unde corporis. Beatae assumenda qui autem non deserunt ipsa. Velit vero voluptatem. Dolorum odio voluptatem voluptatibus quidem magni adipisci quis id. Vitae non atque error sunt quisquam voluptatum.",
-      "userId": 0,
-      "published": false
-    },
-    {
-      "id": 6,
-      "title": "Watched the new Game of Thrones!",
-      "date": "2019-07-16",
-      "body": "Amet et et quia id omnis et cumque qui. Et ducimus aliquam fugit maiores impedit deserunt in animi molestiae. Provident beatae accusamus molestiae nemo.\n \rEst aut in autem perferendis fugiat et doloribus. Eveniet quasi consequuntur inventore iusto dolorem nulla rem. Ut tempora eligendi aliquid rem esse qui ut ad quisquam.\n \rAut sunt a voluptatem ratione fugit est consequatur. Minima quas libero quo. Molestias voluptas velit veritatis aut cum. In eligendi vitae autem deleniti quibusdam facilis voluptatem consequuntur.",
-      "userId": 0,
-      "published": true
-    },
-    {
-      "id": 7,
-      "title": "Checked my credit score",
-      "date": "2019-06-29",
-      "body": "Est eum enim ut vel. Expedita cupiditate tempore aut dolore eaque tempore. Cum adipisci quasi vitae odio. Odit rerum laborum consequatur iure autem aut. Et iure consectetur vel dolores nobis ut cumque facere sed. Omnis quia blanditiis sunt modi facilis repellendus.\n \rImpedit consequatur nam quod. Odio est sint sit aliquam quaerat sapiente. Doloremque nihil quo. Sed soluta cumque. Ea quia quas.\n \rOccaecati quod earum molestiae est voluptatem omnis quibusdam ipsam. Reiciendis consequatur voluptatem aut quod est numquam. Architecto dolore suscipit rem dolores. Dolorum qui minus qui quibusdam ullam aut dolorum eum. Molestiae exercitationem ut molestiae ut id. Doloremque voluptatibus voluptatem quia quo libero vero mollitia quo.",
-      "userId": 1,
-      "published": true
-    },
-    {
-      "id": 8,
-      "title": "Watched the 2018 world cup higlights again",
-      "date": "2019-08-24",
-      "body": "Et quis nam sit enim eligendi. Necessitatibus beatae ut in esse. Id quia ut nihil consectetur velit hic doloremque.\n \rSequi voluptates odio. Dolor assumenda voluptatibus beatae iste dolorem recusandae ducimus. Consequatur ipsam cum quos soluta facere totam cum sed. Officiis voluptas sequi.\n \rSed rerum accusantium dolores velit. Quia corrupti rerum nihil accusantium. Molestiae fuga laboriosam dolorem hic deleniti alias. Vitae impedit fuga excepturi ea voluptas. Saepe vero sed suscipit sed minus et quidem ea.",
-      "userId": 2,
-      "published": false
-    },
-    {
-      "id": 9,
-      "title": "Went to a cracking react workshop",
-      "date": "2019-05-31",
-      "body": "Earum ex et in aspernatur qui. Rem maiores maiores quia nihil tenetur. In soluta a libero adipisci dolorum autem ea non. Voluptas iusto similique aperiam accusamus maxime vero repellendus veritatis. Placeat non voluptas quisquam aut nisi fuga velit.\n \rQui ut nulla architecto sint suscipit recusandae aspernatur. Architecto sunt corrupti rerum deserunt maxime accusantium. Nihil tempora aut. Quos magni repellendus dolores aut aliquid iusto nihil.\n \rEt quo voluptas sunt earum qui laudantium qui illum nesciunt. Repudiandae hic sed possimus. Natus et sunt nisi necessitatibus fugit non autem rerum sunt. Perspiciatis provident rerum occaecati dolores voluptates. Iure sunt dignissimos eaque animi ad omnis rerum.",
-      "userId": 3,
-      "published": false
-    },
-    {
-      "id": 10,
-      "title": "did some tweeting",
-      "date": "2019-08-14",
-      "body": "Optio quos amet quos ipsam ducimus. Nobis vitae incidunt praesentium. Eius minima omnis delectus quo non. Quis omnis repellat aperiam est beatae est quos corrupti. Voluptatum blanditiis nam at tenetur.\n \rEt libero doloremque voluptatem. Molestiae sint aut quam aut aspernatur id et soluta ea. Sapiente est maxime ipsa modi maxime eos voluptates. Occaecati qui modi quae consequuntur iusto non quam.\n \rAd vitae mollitia amet et nesciunt molestiae sunt sequi voluptatum. Ad quis est voluptatem illum aut. Culpa porro laudantium consequatur earum rerum ut consequatur. Est aliquam quo quas. Consectetur quia impedit occaecati totam.",
-      "userId": 3,
-      "published": false
-    }
-  ],
-  "users": [
-    {
-      "lastLogInTime": 1567798476103,
-      "name": "alice",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "name": "bob"
-    },
-    {
-      "id": 3,
-      "name": "charlotte"
-    }
-  ]
+    "posts": [
+        {
+            "id": 1,
+            "title": "A day at the beach",
+            "date": "2019-07-10",
+            "body": "Quia ut molestias iusto. Quaerat error voluptas omnis doloribus est iure fugiat aut ab. Neque inventore ab qui fuga.\n \rQuia necessitatibus ipsum assumenda quam nesciunt. Nemo consequuntur consequuntur odit aperiam quasi. Qui veniam quis iusto est tempore culpa. Ducimus ut asperiores numquam quia. Nulla vero vel ut.\n \rQuod eveniet voluptas. Eum dolorum est magnam quidem odit non. Consectetur optio eos sed magnam sed. Nemo debitis aspernatur dolorem ut error. Non eos non qui in et accusamus.",
+            "userId": 0,
+            "published": false,
+            "tags": [
+                "journal"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Attended the React workshop",
+            "date": "2019-06-10",
+            "body": "Consequatur veniam ipsum harum velit porro earum dicta corporis. Deleniti esse animi natus nemo blanditiis aut inventore doloremque eos. Reprehenderit facilis perspiciatis est omnis quod earum impedit. Sunt rerum blanditiis et omnis sed necessitatibus nihil.\n \rEt quam adipisci ut commodi quasi necessitatibus aspernatur harum. Dolor dolore quam recusandae in sit ipsum. Aspernatur voluptatem quia. Rerum voluptatem quia voluptas occaecati.\n \rIn dignissimos aut et est aliquid aut adipisci. Quam dicta consectetur sit quis autem. Qui odit fugit magnam id praesentium molestias quo sint omnis. Similique voluptas voluptas in voluptatum.",
+            "userId": 2,
+            "published": true,
+            "tags": [
+                "react"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Did a 5km run",
+            "date": "2019-08-18",
+            "body": "Eos facere dolorem reprehenderit eligendi eveniet. Corrupti iusto voluptate quo incidunt et modi maiores sapiente. Eos quo hic cum nobis architecto porro et.\n \rQuasi expedita aliquid suscipit officia esse cum. Rerum autem cupiditate expedita voluptatum. Earum commodi perferendis.\n \rExercitationem quia eos id et deserunt beatae sint fugit. Fugit autem unde velit ea voluptatem modi. Et exercitationem eveniet blanditiis ut et ut repellat. Aut quae repellendus eius cum sunt qui quis voluptatem. Ratione maiores ut est.",
+            "userId": 0,
+            "published": true,
+            "tags": [
+                "exercise"
+            ]
+        },
+        {
+            "id": 4,
+            "title": "Birthday dinner for a friend",
+            "date": "2019-06-03",
+            "body": "Ea nihil sunt voluptatibus eligendi possimus veniam. Labore exercitationem ea rerum non aspernatur excepturi voluptatem sapiente. Culpa et voluptas tenetur adipisci. Aut laborum quos dolorem saepe.\n \rLibero quia nulla officiis sed. Non veritatis corrupti vel accusamus dolorum est. Nobis excepturi repellendus iure. Sit nemo veniam provident corrupti fugit.\n \rModi ut nihil recusandae eos. Natus nihil laboriosam cum et recusandae non. Dolorem aut impedit reprehenderit architecto odio voluptatibus in commodi aut. Quasi suscipit et rerum illum rerum placeat non autem ex.",
+            "userId": 0,
+            "published": true,
+            "tags": [
+                "journal"
+            ]
+        },
+        {
+            "id": 5,
+            "title": "Played football in the park",
+            "date": "2019-08-07",
+            "body": "Labore dolores molestiae facilis consequuntur aut blanditiis ea voluptatibus ratione. Et consequatur eos voluptatem deleniti autem fuga unde aliquid voluptas. Neque labore nesciunt id non voluptas eaque laboriosam dignissimos.\n \rNihil consectetur sed placeat rerum non repellat dolor rem. Voluptas voluptatum facilis enim quae rem aspernatur vero assumenda placeat. Dolore rerum ea occaecati animi id vel. Pariatur qui consequuntur in illum et aut et sunt. Ea doloremque voluptatem fuga expedita quis est ipsam tempora consectetur.\n \rReprehenderit maiores quis eos nisi explicabo. Cupiditate excepturi placeat. Sit tempore vitae qui minima amet voluptatem sed ipsum voluptates. Fugiat itaque et molestiae ab nam. Impedit ea voluptatem.",
+            "userId": 2,
+            "published": false,
+            "tags": [
+                "exercise"
+            ]
+        },
+        {
+            "id": 6,
+            "title": "Watched the new Game of Thrones!",
+            "date": "2019-06-22",
+            "body": "Fuga doloremque rerum eum. Sunt aut quia aut aut aliquam corporis quidem nam. Excepturi molestiae et. Dolorum itaque quaerat qui ea illum nobis provident sit sed. Eos soluta aspernatur asperiores ducimus aperiam. Beatae dolorem maxime qui officiis et et ut.\n \rDoloribus fugiat sed assumenda. Nobis rerum ad ea et deleniti deserunt et. Sit consequatur error minus fugit molestiae. Ut quisquam et sed velit aut est quam molestias. Aut quisquam et neque et.\n \rAliquid autem nesciunt. Harum sed sapiente voluptatem. Vitae et qui. Iusto aliquam ducimus consectetur rerum vero. Incidunt quidem sapiente iusto.",
+            "userId": 1,
+            "published": false,
+            "tags": [
+                "tv"
+            ]
+        },
+        {
+            "id": 7,
+            "title": "Checked my credit score",
+            "date": "2019-06-09",
+            "body": "Dolorem reiciendis quos est natus quo delectus impedit qui officia. Perferendis quo dolorem iste sint eum est. Ut accusamus et praesentium dicta asperiores sed. Sint quam ea non magni aut. Voluptas laboriosam quis asperiores optio illum cum non minima.\n \rQui sint labore. Consequatur quae voluptatem. Assumenda minima et ex quisquam animi.\n \rEius quo veritatis provident rerum sed. Commodi odit ipsa voluptatem iusto vitae veniam sequi minus. Rerum laboriosam id eos facilis eveniet. Inventore incidunt minus unde quos est tempore quo tempora sunt. Atque eveniet recusandae est aspernatur quas ipsa. Voluptatibus ut eum quibusdam inventore inventore porro dolores fugiat.",
+            "userId": 2,
+            "published": true,
+            "tags": [
+                "money"
+            ]
+        },
+        {
+            "id": 8,
+            "title": "Watched the 2018 world cup higlights again",
+            "date": "2019-07-10",
+            "body": "Quibusdam sint quis placeat. Qui itaque hic voluptate itaque aut. Eum sit inventore rerum nostrum.\n \rEst et ullam est architecto dolorem tenetur maxime quia. Earum aliquid saepe cupiditate deserunt eius. Atque pariatur earum consequatur placeat. Quia provident officia labore voluptate quos dicta.\n \rDolorem earum facere magnam natus eveniet error enim. Odio nam ipsum assumenda iusto nulla veritatis vel. Beatae dolorem voluptas quibusdam. Molestiae beatae natus tempore modi in officiis qui commodi natus.",
+            "userId": 2,
+            "published": false,
+            "tags": [
+                "sport"
+            ]
+        },
+        {
+            "id": 9,
+            "title": "Went to a cracking react workshop",
+            "date": "2019-09-02",
+            "body": "Est odit consequuntur quo non. Et dolorum odit exercitationem voluptatum voluptatibus vel et. Maxime magni sit quisquam et. Sint molestiae et dolor. Id eveniet id.\n \rCum ipsa impedit. Non ducimus animi error. Odit dolor ex enim harum cumque id. Soluta suscipit harum adipisci dicta voluptas odio fuga.\n \rAmet eum modi. Totam quis dignissimos. Inventore dolorem nisi est assumenda. Deserunt asperiores amet expedita quo voluptatibus aut. Non magnam quia.",
+            "userId": 1,
+            "published": false,
+            "tags": [
+                "react"
+            ]
+        },
+        {
+            "id": 10,
+            "title": "did some tweeting",
+            "date": "2019-07-17",
+            "body": "Unde ex et odit. At libero sapiente consectetur. Repellendus qui consectetur placeat beatae quas expedita odit doloribus.\n \rDolorum consectetur ipsam et iste eligendi est qui ipsum. Mollitia minima perspiciatis optio autem corporis dolores est eius ut. Eaque nihil aut aut expedita adipisci. In provident dolorem necessitatibus sit magnam. Iusto distinctio repudiandae officia et.\n \rIpsa velit quidem et. Perspiciatis illo consequuntur est animi autem non iusto est. Iure accusantium atque aut iure consequatur omnis qui. Odit rem unde.",
+            "userId": 3,
+            "published": false,
+            "tags": [
+                "thought-leader"
+            ]
+        }
+    ],
+    "users": [
+        {
+            "id": 1,
+            "name": "alice"
+        },
+        {
+            "id": 2,
+            "name": "bob"
+        },
+        {
+            "id": 3,
+            "name": "charlotte"
+        }
+    ]
 }
