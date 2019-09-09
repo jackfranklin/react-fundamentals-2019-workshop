@@ -1,6 +1,5 @@
 dist/
 .cache/
-exercises/**/index.html
 yarn-error.log
 node_modules/
 exercises/api-port.js
