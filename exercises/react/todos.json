@@ -614,6 +614,33 @@
     ]
   ],
   [
+    "33",
+    [
+      {
+        "filePath": "exercises/react/33/index.js",
+        "todos": [
+          "swap this request to use our GraphQL API"
+        ]
+      },
+      {
+        "filePath": "exercises/react/33/journal-header.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/33/login-modal.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/33/post.js",
+        "todos": []
+      },
+      {
+        "filePath": "exercises/react/33/toggle.js",
+        "todos": []
+      }
+    ]
+  ],
+  [
     "4",
     [
       {
