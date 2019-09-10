@@ -22,14 +22,29 @@ const bundler = new Bundler(indexFile)
 Promise.all([
   getPort({ port: getPort.makeRange(1100, 1300) }),
   getPort({ port: getPort.makeRange(3000, 3100) }),
-]).then(([parcelPort, apiPort]) => {
+  getPort({ port: getPort.makeRange(4000, 4100) }),
+]).then(([parcelPort, apiPort, graphQLPort]) => {
   console.log(chalk.green('Found ports!'))
   console.log('-->', 'The frontend is running on port', chalk.bold(parcelPort))
   console.log('-->', 'The API is running on port', chalk.bold(apiPort))
+  console.log(
+    '-->',
+    'The GraphQL API is running on port',
+    chalk.bold(graphQLPort)
+  )
+
   const apiPortModule = `export default ${apiPort}`
+  const graphqlPortModule = `export default ${graphQLPort}`
+
   fs.writeFileSync(
     path.join(process.cwd(), 'exercises', 'api-port.js'),
     apiPortModule,
+    { encoding: 'utf8' }
+  )
+
+  fs.writeFileSync(
+    path.join(process.cwd(), 'exercises', 'graphql-port.js'),
+    graphqlPortModule,
     { encoding: 'utf8' }
   )
 
@@ -38,8 +53,15 @@ Promise.all([
       if (err) {
         console.log(chalk.red('‼ Error running API:', err))
       }
+      console.log(`✅ Running demo API on http://localhost:${apiPort}`)
     })
-    console.log(`✅ Running demo API on http://localhost:${apiPort}`)
+
+    exec(`${babelNodePath} exercises/graphql-api/server.js`, err => {
+      if (err) {
+        console.log(chalk.red('‼ Error running GraphQL API:', err))
+      }
+      console.log(`✅ Running GraphQL API on http://localhost:${graphQLPort}`)
+    })
 
     bundler.serve(parcelPort)
   })
