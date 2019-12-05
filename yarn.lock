@@ -8179,10 +8179,10 @@ snapdragon@^0.8.1:
     source-map-resolve "^0.5.0"
     use "^3.1.0"
 
-so-fetch-js@0.4.1:
-  version "0.4.1"
-  resolved "https://registry.yarnpkg.com/so-fetch-js/-/so-fetch-js-0.4.1.tgz#2948795974fcad3c165136e1e9773f033b8b7757"
-  integrity sha512-BfvZJfgVSfyiVGqt90AfaKBXL6jwLoRqAiH05p0feJEtCfLKlWtCAezhhY0mKGqKuWfUVz58AZh9G6iS2XuHNw==
+so-fetch-js@0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/so-fetch-js/-/so-fetch-js-0.4.2.tgz#f952aa2d45f4425dddb0665844a904c0941a0980"
+  integrity sha512-l39TIx5Ms8psPy0jC/DpdJZ2eyuYqoaM9ihqEskjJR+u/JN7DPwGAgTjWzz6DqUvLvJnl3mJ+UuPmhMaoUyxXQ==
 
 source-map-resolve@^0.5.0:
   version "0.5.2"
