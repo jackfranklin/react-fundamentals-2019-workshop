@@ -7,6 +7,10 @@ const { exec } = require('child_process')
 
 console.log('🎉', chalk.green('Loading React fundamentals workshop...'))
 
+console.log(
+  '➡️',
+  chalk.blue(` This will take a while the first time. Don't be alarmed :)`)
+)
 const babelNodePath = path
   .join(process.cwd(), 'node_modules', '.bin', 'babel-node')
   .replace(/(\s+)/g, '\\$1')
