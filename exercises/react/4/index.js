@@ -18,6 +18,9 @@ const bunchOfProps = {
 }
 
 // TODO: use the spread operator to pass through all the object keys as prop
+
+// TODO: have a play with different types of props. Can you pass through a
+// function and call it in the JournalApp component?
 const Render = () => (
   <JournalApp
     name={bunchOfProps.name}
