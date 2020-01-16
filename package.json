@@ -43,7 +43,7 @@
     "faker": "^4.1.0",
     "firebase": "^6.4.0",
     "frontend": "^2.0.0-alpha.4",
-    "get-port": "^5.0.0",
+    "get-port": "^5.1.1",
     "glob": "^7.1.4",
     "graphql": "^14.5.4",
     "graphql-request": "^1.8.2",
