@@ -34,7 +34,7 @@
     "eslint": "^6.7.2",
     "eslint-config-prettier": "^6.2.0",
     "eslint-config-unobtrusive": "^1.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^2.3.0",
     "expect": "^24.8.0",
