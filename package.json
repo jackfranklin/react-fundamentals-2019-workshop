@@ -17,7 +17,7 @@
     "lint": "eslint 'exercises/' --ext js --ext jsx --quiet"
   },
   "dependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.13.13",
     "@babel/node": "^7.2.2",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
